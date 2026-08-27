@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "Cite the version-specific Zenodo DOI for the manuscript you use. The formal releases are listed under references."
+title: "The Emergent Frame Research Releases"
+authors:
+  - family-names: Wu
+    given-names: Xiaodan
+    orcid: "https://orcid.org/0009-0005-5892-0293"
+    affiliation: "Independent Researcher"
+repository-code: "https://github.com/the-emergent-frame/research-releases"
+url: "https://theemergentframe.org/papers/"
+license: CC-BY-4.0
+references:
+  - type: article
+    title: "A Helical Spacetime Ansatz Linking the Planck Scale and Electroweak Mixing"
+    authors:
+      - family-names: Wu
+        given-names: Xiaodan
+        orcid: "https://orcid.org/0009-0005-5892-0293"
+    year: 2026
+    version: "5.1"
+    doi: "10.5281/zenodo.22101000"
+    url: "https://doi.org/10.5281/zenodo.22101000"
+  - type: article
+    title: "From a Gravity-Calibrated Helix to a Conditional Fine-Structure Correspondence"
+    authors:
+      - family-names: Wu
+        given-names: Xiaodan
+        orcid: "https://orcid.org/0009-0005-5892-0293"
+    year: 2026
+    version: "4.7"
+    doi: "10.5281/zenodo.22117153"
+    url: "https://doi.org/10.5281/zenodo.22117153"

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "tef_id": "TEF-2026-001",
+  "title": "A Helical Spacetime Ansatz Linking the Planck Scale and Electroweak Mixing",
+  "authors": ["Xiaodan Wu"],
+  "orcid": "0009-0005-5892-0293",
+  "version": "v5.1",
+  "release_date": "2026-08-21",
+  "status": "Preprint; not peer reviewed",
+  "license": "CC-BY-4.0",
+  "zenodo_doi": "10.5281/zenodo.22101000",
+  "zenodo_concept_doi": "10.5281/zenodo.22100999",
+  "canonical_url": "https://theemergentframe.org/papers/helical-spacetime-weak-mixing/",
+  "pdf": {
+    "path": "paper/manuscript.pdf",
+    "sha256": "14c9dc9f8bbbc52fea44073675c009c46c6f0c30311d8f4904cff31f0291e136"
+  },
+  "source": {
+    "path": "paper/manuscript.tex",
+    "sha256": "6aa6852ffc2cff3b7c3913c1531b50ed4248477970e243533891dc25a324ecc0"
+  }
+}

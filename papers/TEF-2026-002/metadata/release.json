@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "tef_id": "TEF-2026-002",
+  "title": "From a Gravity-Calibrated Helix to a Conditional Fine-Structure Correspondence",
+  "authors": ["Xiaodan Wu"],
+  "orcid": "0009-0005-5892-0293",
+  "version": "v4.7",
+  "release_date": "2026-08-26",
+  "status": "Preprint; not peer reviewed",
+  "license": "CC-BY-4.0",
+  "zenodo_doi": "10.5281/zenodo.22117153",
+  "zenodo_concept_doi": "10.5281/zenodo.22117152",
+  "canonical_url": "https://theemergentframe.org/papers/helical-geometry-fine-structure-constant/",
+  "pdf": {
+    "path": "paper/manuscript.pdf",
+    "sha256": "1e7072ca9d1a09f1be30ffb437c0f433bac18387b1aefd67a99be4734de93a3d"
+  },
+  "source": {
+    "path": "paper/manuscript.tex",
+    "sha256": "1f5497f4bd97106fc51a6c3f9087fc355b9d7bc036a0dc3befa97a813e75db4d"
+  }
+}

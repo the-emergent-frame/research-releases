@@ -1,0 +1,35 @@
+name: Reproducibility report
+description: Report a calculation, source, hash, citation, or build discrepancy.
+title: "[Reproducibility]: "
+labels:
+  - reproducibility
+body:
+  - type: dropdown
+    id: release
+    attributes:
+      label: TEF release
+      options:
+        - TEF-2026-001 v5.1
+        - TEF-2026-002 v4.7
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Equation, section, file, or command involved.
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed result
+      description: Include the command, environment, and complete error or numerical output.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
