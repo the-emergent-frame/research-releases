@@ -10,6 +10,7 @@ The canonical human-readable records are maintained on the TEF website. Zenodo i
 | --- | --- | --- | --- | --- |
 | [TEF-2026-001](papers/TEF-2026-001/) | A Helical Spacetime Ansatz Linking the Planck Scale and Electroweak Mixing | v5.1 | Preprint; not peer reviewed | [10.5281/zenodo.22101000](https://doi.org/10.5281/zenodo.22101000) |
 | [TEF-2026-002](papers/TEF-2026-002/) | From a Gravity-Calibrated Helix to a Conditional Fine-Structure Correspondence | v4.7 | Preprint; not peer reviewed | [10.5281/zenodo.22117153](https://doi.org/10.5281/zenodo.22117153) |
+| [TEF-2026-003](papers/TEF-2026-003/) | From a Gravity-Calibrated Helix to Neutrino Oscillation Correspondences | v4.2 | Preprint; not peer reviewed | [10.5281/zenodo.22150998](https://doi.org/10.5281/zenodo.22150998) |
 
 ## Verify
 

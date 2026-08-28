@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "tef_id": "TEF-2026-003",
+  "title": "From a Gravity-Calibrated Helix to Neutrino Oscillation Correspondences: A Third Cross-Sector Comparison of the Frozen TEF Shape Parameter",
+  "authors": ["Xiaodan Wu"],
+  "orcid": "0009-0005-5892-0293",
+  "version": "v4.2",
+  "release_date": "2026-08-29",
+  "status": "Preprint; not peer reviewed",
+  "license": "CC-BY-4.0",
+  "zenodo_doi": "10.5281/zenodo.22150998",
+  "zenodo_concept_doi": "10.5281/zenodo.22150997",
+  "canonical_url": "https://theemergentframe.org/papers/cross-sector-neutrino-correspondences/",
+  "pdf": {
+    "path": "paper/manuscript.pdf",
+    "sha256": "05d5d9a8de5aa6b65fa7c529827d8579ebfd2f0262fcb2b07ac743da33e1434c"
+  },
+  "source": {
+    "path": "paper/manuscript.tex",
+    "sha256": "88ea1f7da4093c2e0bf1c3526916302540cf677f0b7ae0d067acf60a58a1f5a5"
+  }
+}

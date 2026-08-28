@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PAPERS = ("TEF-2026-001", "TEF-2026-002")
+PAPERS = ("TEF-2026-001", "TEF-2026-002", "TEF-2026-003")
 
 
 def sha256(path: Path) -> str:
