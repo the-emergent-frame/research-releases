@@ -40,3 +40,13 @@ references:
     version: "4.2"
     doi: "10.5281/zenodo.22150998"
     url: "https://doi.org/10.5281/zenodo.22150998"
+  - type: article
+    title: "Closed Matter and Open Space: A Relative-Framing Ansatz for Incomplete Quark Sectors and the Matter–Space Interface"
+    authors:
+      - family-names: Wu
+        given-names: Xiaodan
+        orcid: "https://orcid.org/0009-0005-5892-0293"
+    year: 2026
+    version: "4.6"
+    doi: "10.5281/zenodo.22256714"
+    url: "https://doi.org/10.5281/zenodo.22256714"

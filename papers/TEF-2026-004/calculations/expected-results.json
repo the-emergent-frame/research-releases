@@ -1,0 +1,27 @@
+{
+  "zeta": {
+    "real": -0.5,
+    "imag": -0.8660254037844386
+  },
+  "zeta_cubed": {
+    "real": 1.0,
+    "imag": 0.0
+  },
+  "same_endpoint_phase_distance": 0.0,
+  "relative_class_difference": 1,
+  "normalized_lifts": {
+    "D": -0.3333333333333333,
+    "U": 0.6666666666666666
+  },
+  "charge_difference": 1.0,
+  "three_sector_boundary_distance_from_identity": 0.0,
+  "quark_antiquark_boundary_distance_from_identity": 0.0,
+  "baryon_triality": 0,
+  "meson_triality": 0,
+  "baryon_charges": {
+    "DDD": -1,
+    "UDD": 0,
+    "UUD": 1,
+    "UUU": 2
+  }
+}

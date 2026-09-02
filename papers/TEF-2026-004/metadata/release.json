@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "tef_id": "TEF-2026-004",
+  "title": "Closed Matter and Open Space: A Relative-Framing Ansatz for Incomplete Quark Sectors and the Matter–Space Interface",
+  "authors": ["Xiaodan Wu"],
+  "orcid": "0009-0005-5892-0293",
+  "version": "v4.6",
+  "release_date": "2026-09-02",
+  "status": "Preprint; not peer reviewed",
+  "license": "CC-BY-4.0",
+  "zenodo_doi": "10.5281/zenodo.22256714",
+  "zenodo_concept_doi": "10.5281/zenodo.22256713",
+  "canonical_url": "https://theemergentframe.org/papers/closed-matter-open-space/",
+  "pdf": {
+    "path": "paper/manuscript.pdf",
+    "sha256": "8a78a73b1c4f275e703a2ac4c7f196d3520d072a36e34f9cf51ffaefb4a4d138"
+  },
+  "source": {
+    "path": "paper/manuscript.tex",
+    "sha256": "7e70c4a3cd37b359da0a9686c5d565dc7b405580acecc171fec065a1ce0d97ef"
+  }
+}

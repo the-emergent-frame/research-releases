@@ -11,6 +11,7 @@ The canonical human-readable records are maintained on the TEF website. Zenodo i
 | [TEF-2026-001](papers/TEF-2026-001/) | A Helical Spacetime Ansatz Linking the Planck Scale and Electroweak Mixing | v5.1 | Preprint; not peer reviewed | [10.5281/zenodo.22101000](https://doi.org/10.5281/zenodo.22101000) |
 | [TEF-2026-002](papers/TEF-2026-002/) | From a Gravity-Calibrated Helix to a Conditional Fine-Structure Correspondence | v4.7 | Preprint; not peer reviewed | [10.5281/zenodo.22117153](https://doi.org/10.5281/zenodo.22117153) |
 | [TEF-2026-003](papers/TEF-2026-003/) | From a Gravity-Calibrated Helix to Neutrino Oscillation Correspondences | v4.2 | Preprint; not peer reviewed | [10.5281/zenodo.22150998](https://doi.org/10.5281/zenodo.22150998) |
+| [TEF-2026-004](papers/TEF-2026-004/) | Closed Matter and Open Space: A Relative-Framing Ansatz for Incomplete Quark Sectors and the Matter–Space Interface | v4.6 | Preprint; not peer reviewed | [10.5281/zenodo.22256714](https://doi.org/10.5281/zenodo.22256714) |
 
 ## Verify
 
@@ -30,7 +31,7 @@ Only formally released material is included. Private working notes, failed direc
 
 ## Citation
 
-Cite the version-specific Zenodo DOI for the manuscript containing the scientific claim. Paper-specific `CITATION.cff` and BibTeX files are stored under each release's `metadata/` directory. The repository-level [CITATION.cff](CITATION.cff) lists both releases.
+Cite the version-specific Zenodo DOI for the manuscript containing the scientific claim. Paper-specific `CITATION.cff` and BibTeX files are stored under each release's `metadata/` directory. The repository-level [CITATION.cff](CITATION.cff) lists all releases.
 
 ## License
 
