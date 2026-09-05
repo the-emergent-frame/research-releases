@@ -1,0 +1,17 @@
+{
+  "helix_shape_parameter_q": 0.5563241800453369,
+  "phase_closure_residual": 0.0,
+  "gravity_calibrated_radius_m": 8.081275122118526e-36,
+  "one_turn_rollout_m": 2.82479995197982e-35,
+  "two_turn_rollout_m": 5.64959990395964e-35,
+  "two_turn_units_per_fm": 1.7700368468555256e+19,
+  "reference_string_tension": {
+    "sqrt_sigma_gev": 0.445,
+    "sigma_gev2": 0.198025,
+    "sigma_gev_per_fm": 1.0035373753684624
+  },
+  "diagnostic_two_turn_gap_ev": 5.669584659501574e-11,
+  "partition_invariance_ratio": 1.0,
+  "force_scheme_linear_coefficient": 0.75,
+  "momentum_scheme_linear_coefficient": 1.5
+}

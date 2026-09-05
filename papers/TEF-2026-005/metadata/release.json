@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "tef_id": "TEF-2026-005",
+  "title": "From a Gravity-Calibrated Helix to a Strong-Interaction Confinement Correspondence",
+  "authors": ["Xiaodan Wu"],
+  "orcid": "0009-0005-5892-0293",
+  "version": "v4.1",
+  "release_date": "2026-09-06",
+  "status": "Preprint; not peer reviewed",
+  "license": "CC-BY-4.0",
+  "zenodo_doi": "10.5281/zenodo.22412464",
+  "zenodo_concept_doi": "10.5281/zenodo.22412463",
+  "canonical_url": "https://doi.org/10.5281/zenodo.22412464",
+  "project_url": "https://theemergentframe.org",
+  "pdf": {
+    "path": "paper/manuscript.pdf",
+    "sha256": "30ddb654cf08ba2855bea6691e1e790955187482b359dda21ab8b7f76b271dc2"
+  },
+  "source": {
+    "path": "paper/manuscript.tex",
+    "sha256": "3570c63872e41eae95b062fd984e5837522e5a766796b03a7857c4657e2c0925"
+  }
+}
