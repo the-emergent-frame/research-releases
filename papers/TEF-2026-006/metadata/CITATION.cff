@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite this version-specific Zenodo record."
+title: "From a Gravity-Calibrated Helix to a Matter-Spacetime Interface: Closure Obstruction and a Factorized Mass-Squared Ansatz"
+authors:
+  - family-names: Wu
+    given-names: Xiaodan
+    orcid: "https://orcid.org/0009-0005-5892-0293"
+    affiliation: "Independent Researcher"
+version: "3.2"
+date-released: 2026-09-08
+doi: "10.5281/zenodo.22649267"
+url: "https://doi.org/10.5281/zenodo.22649267"
+license: CC-BY-4.0

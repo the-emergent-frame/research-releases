@@ -1,0 +1,36 @@
+{
+  "helix_shape_parameter_q": 0.5563241800453369,
+  "phase_closure_residual": 0.0,
+  "sin_beta": 0.48615611191606933,
+  "cos_beta": 0.8738719785223981,
+  "positive_progress_factor_for_unit_radius": 1.699352813563407,
+  "fenchel_deficit": 0.12612802147760194,
+  "additional_curvature_bound_rad": 0.7924857313716998,
+  "additional_curvature_bound_degrees": 45.406087731936694,
+  "planck_length_m": 1.6162550244237053e-35,
+  "one_turn_rollout_m": 2.82479995197982e-35,
+  "one_turn_units_per_fm": 3.540073693711051e+19,
+  "symmetric_minimal_closure_spectra": {
+    "2": {
+      "zero_eigenvalue_multiplicity": 1,
+      "loaded_eigenvalue_over_lambda_squared": 0.4726955303066995,
+      "loaded_eigenvalue_multiplicity": 1,
+      "rank": 1,
+      "nullity": 1
+    },
+    "3": {
+      "zero_eigenvalue_multiplicity": 1,
+      "loaded_eigenvalue_over_lambda_squared": 0.3545216477300246,
+      "loaded_eigenvalue_multiplicity": 2,
+      "rank": 2,
+      "nullity": 1
+    },
+    "4": {
+      "zero_eigenvalue_multiplicity": 1,
+      "loaded_eigenvalue_over_lambda_squared": 0.31513035353779967,
+      "loaded_eigenvalue_multiplicity": 3,
+      "rank": 3,
+      "nullity": 1
+    }
+  }
+}

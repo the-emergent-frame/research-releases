@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "tef_id": "TEF-2026-006",
+  "title": "From a Gravity-Calibrated Helix to a Matter-Spacetime Interface: Closure Obstruction and a Factorized Mass-Squared Ansatz",
+  "authors": ["Xiaodan Wu"],
+  "orcid": "0009-0005-5892-0293",
+  "version": "v3.2",
+  "release_date": "2026-09-08",
+  "status": "Preprint; not peer reviewed",
+  "license": "CC-BY-4.0",
+  "zenodo_doi": "10.5281/zenodo.22649267",
+  "zenodo_concept_doi": "10.5281/zenodo.22649266",
+  "canonical_url": "https://doi.org/10.5281/zenodo.22649267",
+  "project_url": "https://theemergentframe.org",
+  "pdf": {
+    "path": "paper/manuscript.pdf",
+    "sha256": "69477f64720b9ac7e2a1b84445932997c19b2d305dbbb8c18978cd70fd4b9356"
+  },
+  "source": {
+    "path": "paper/manuscript.tex",
+    "sha256": "3324096d2c948dacfcc162a77de82f8038591fab24702e0b8da7ec23772f6679"
+  }
+}

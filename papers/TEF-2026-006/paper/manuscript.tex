@@ -1,0 +1,861 @@
+\documentclass[10pt]{article}
+
+\usepackage[letterpaper,margin=0.72in,columnsep=0.26in]{geometry}
+\usepackage{amsmath,amssymb,bm,mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{flushend}
+
+\setstretch{1.13}
+\setlength{\parindent}{1.15em}
+\setlength{\parskip}{0.18em}
+\setlist{nosep,leftmargin=*}
+\captionsetup{font=small,labelfont=bf}
+\sisetup{detect-all=true}
+\raggedbottom
+\setlength{\emergencystretch}{2em}
+
+\newcommand{\TEF}{\mathrm{TEF}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\ii}{\mathrm{i}}
+
+\hypersetup{
+  pdftitle={From a Gravity-Calibrated Helix to a Matter--Spacetime Interface: Closure Obstruction and a Factorized Mass-Squared Ansatz},
+  pdfauthor={Xiaodan Wu},
+  pdfsubject={The Emergent Frame; matter--spacetime interface; helical framing; closure obstruction; mass-squared operator},
+  pdfkeywords={The Emergent Frame, emergent spacetime, matter-spacetime interface, helical spacetime, topological closure, framing, mass-squared operator, quantum geometry}
+}
+
+\title{\bfseries From a Gravity-Calibrated Helix to a Matter--Spacetime Interface:\\
+Closure Obstruction and a Factorized Mass-Squared Ansatz}
+\author{Xiaodan Wu\textsuperscript{1,*}\\
+\small \textsuperscript{1}Independent Researcher\textsuperscript{\(\dagger\)}}
+\date{September 8, 2026 --- Version 3.2}
+
+\begin{document}
+\twocolumn[
+\begin{@twocolumnfalse}
+\maketitle
+\vspace{-0.7em}
+\begin{minipage}{\textwidth}
+\small
+\begin{center}
+\textbf{Abstract}
+\end{center}
+\noindent
+The Emergent Frame (TEF) program asks whether open spacetime and matter can be different global organizations of compatible local structure. In the working ``track'' picture, structure constrains how energy can be organized, propagated, and rerouted; it is not a classical particle-on-rail model. We show that a finite sequence of oriented complete nonzero-pitch circular helix turns cannot be joined directly with $C^1$ tangent continuity into a closed oriented curve. When one frozen native turn is retained as a subcurve of a smooth closed completion, Fenchel's theorem gives the necessary additional-curvature bound $K_{\rm int}\ge 2\pi\bigl(1-(1+q^2)^{-1/2}\bigr)$; for the frozen TEF parameter, the dimensionless deficit is $0.126128\ldots$. The obstruction motivates, but does not derive, a rerouting/interface sector. From prescribed post-rerouting closure data we construct a linear map $C_N$ and the positive Gram operator $G_N=C_N^\dagger C_N$, whose rank and kernel are fixed for minimal Euclidean closures. Identifying such an operator with a mass-squared contribution remains a physical ansatz. The result is a geometric and operator-level step toward a future TEF energy law, not yet a derivation of particle masses or QCD dynamics.
+
+\vspace{0.65em}
+\noindent\textbf{Keywords:} The Emergent Frame; emergent spacetime; matter--spacetime interface; helical framing; structural rerouting; energy bookkeeping; mass-squared operator.
+\end{minipage}
+\vspace{1.25em}
+\end{@twocolumnfalse}
+]
+
+\begingroup
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\footnotetext[1]{\href{mailto:xiaodan@theemergentframe.org}{xiaodan@theemergentframe.org}}
+\footnotetext[2]{\href{https://theemergentframe.org}{https://theemergentframe.org}; ORCID: 0009-0005-5892-0293; DOI: \href{https://doi.org/10.5281/zenodo.22649267}{10.5281/zenodo.22649267}.}
+\endgroup
+
+\section{Introduction}
+
+The Standard Model describes elementary-particle interactions through quantum fields and gauge symmetries with extraordinary empirical success, while general relativity treats spacetime geometry as dynamical. The Emergent Frame (TEF) program does not replace those descriptions with a classical ``little-ball'' mechanics. It asks a deeper ontological question: whether some objects that appear as distinct particle and mediator sectors in effective quantum-field language could arise from a smaller set of geometric, topological, and connectivity rules.
+
+A useful intuition is a track network, provided the metaphor is used carefully. A quark-like sector is not imagined here as a hard bead, and a gluon-like sector is not reduced to a small ball flying between beads. Instead, an ordinary matter segment may provide locally admissible structural support, while a gluon-like sector is a candidate for changing routing, framing, or reconnection within the same energy-bearing network. In this language, the quantity organized by the structure is \emph{energy}. The ``track'' specifies allowed support and connectivity; the ``train'' is not a new microscopic object but the energy that can be carried, redistributed, or reorganized by an admissible state.
+
+This distinction defines the longer-term quantitative test. A completed TEF matter theory would need an energy functional or Hamiltonian that assigns reproducible energies to allowed configurations,
+\begin{equation}
+E[\mathcal C]
+\quad\text{or}\quad
+\hat H[\mathcal C],
+\label{eq:futureEnergyLaw}
+\end{equation}
+and the same structural law would then have to recover, without process-by-process fitting, multiple independent observables such as rest masses, excitation gaps, decay-energy balances, binding energies, and interaction responses. Reaching that stage would turn the track picture from an ontology into a quantitative physical theory. The present paper does not yet supply Eq.~\eqref{eq:futureEnergyLaw}. It addresses an earlier prerequisite: whether locally native helical structure can close into matter without an additional routing operation, and how a required interface can be represented mathematically.
+
+Within the TEF series, Paper I introduced a gravity-calibrated right-handed helical ansatz for the open-spacetime branch and froze the dimensionless shape parameter $q$ \cite{WuWeakMixing}. Paper IV deliberately left the topology of closed matter independent of that open geometry and introduced a relative-framing language for globally incomplete quark-like sectors \cite{WuMatterSpace}. Paper V formulated a conditional confinement correspondence without selecting a microscopic quark geometry; its abstract toy realization was explicitly an existence example rather than microscopic ontology \cite{WuConfinement}. The present paper asks whether a common local geometric ancestry can now be tested without first guessing a detailed proton or quark shape.
+
+The broad working hypothesis is that matter and open spacetime may share compatible \emph{local framing primitives} while differing in global admissibility. Open spacetime continues; matter closes, recurs, or reroutes. For a tractable geometric test we then impose a stronger \emph{complete-native-segment ansatz}: the relevant pieces are complete circular helical turns with nonzero pitch, joined sequentially with $C^1$ tangent continuity. Under that stronger ansatz, direct smooth closure fails. The resulting obstruction gives a concrete reason to investigate a rerouting sector. After direct gluing is relaxed, we separately construct a closure-sensitive interface map $C_N$ and its positive Gram operator $G_N=C_N^\dagger C_N$. The map is an operator ansatz built from prescribed closure data; its Gram, rank, and kernel properties are exact once the map and inner products are specified; identifying $G_N$ with a physical mass-squared contribution is a further physical hypothesis.
+
+Thus the paper makes a deliberately staged claim. It does not derive QCD gluons, the electroweak theory, or absolute particle masses. It shows that a specific native-helical closure model has a rigorous geometric obstruction, that a completion/rerouting operation is conditionally necessary, and that prescribed closure data admit a factorized positive interface construction with exact rank and kernel consequences. This is a step from structural ontology toward energy dynamics, not the endpoint of the program.
+
+\section{Structural track picture and the role of energy}
+\label{sec:trackenergy}
+
+The physical motivation can be summarized by three roles. First, the open-spacetime branch supplies a native local framing. Second, matter is sought among globally self-consistent configurations built from locally compatible structure. Third, interaction-like behavior may involve changes in connectivity rather than only the exchange of independently interpreted mediator objects.
+
+In conventional quantum field theory, gluons are quanta of a non-Abelian gauge field, and that description is experimentally successful. TEF does not dispute the field-theoretic calculation. The proposed reinterpretation is deeper and conditional: what appears in the effective description as exchange may correspond, in an underlying structural description, to a change in routing or reconnection of an energy-bearing matter network. A gluon-like sector is therefore treated as a natural candidate for a switching/rerouting role, while ordinary quark-like sectors are treated as locally admissible but globally incomplete structural segments. Whether the known gluon field can ultimately be derived from such a structure is an open problem.
+
+The energy carried by a state is not assumed to arrive in fixed microscopic bricks. Nor is energy required to follow a classical curve tangent point by point. The working claim is weaker: geometry and topology restrict the state space in which energy can be organized. At an emergent dynamical level, a quantum state may therefore be a superposition over admissible structural support, while energy remains the Hamiltonian observable. In this sense, the track picture is compatible with a wave-function description rather than a replacement for one.
+
+The intended research chain is consequently
+\begin{equation}
+\boxed{
+\begin{gathered}
+\text{local geometry / topology}\\[-0.1em]
+\downarrow\\[-0.1em]
+\text{allowed closure and rerouting}\\[-0.1em]
+\downarrow\\[-0.1em]
+\text{interface law}\\[-0.1em]
+\downarrow\\[-0.1em]
+\text{energy operator / spectrum}\\[-0.1em]
+\downarrow\\[-0.1em]
+\text{independent observables}
+\end{gathered}}
+\label{eq:programChain}
+\end{equation}
+The present paper reaches a provisional interface-operator construction, not a derived interface law or energy dynamics. Its purpose is to make that provisional stage mathematically explicit enough that a future energy law can be constrained rather than guessed.
+
+\section{Inherited native helical framing}
+\label{sec:helix}
+
+Paper I represents a primitive open-spacetime line locally by
+\begin{equation}
+\bm r(\phi)=
+\bigl(R\cos\phi,R\sin\phi,qR\phi\bigr),
+\qquad q\equiv\frac{a}{R},
+\label{eq:helix}
+\end{equation}
+with frozen condition
+\begin{equation}
+q\sqrt{1+q^2}=\frac{2}{\pi},
+\qquad
+q=0.556324180045\ldots
+\label{eq:qfreeze}
+\end{equation}
+and gravity calibration
+\begin{equation}
+R=R_G=\frac{\ell_P}{2}.
+\label{eq:RG}
+\end{equation}
+The one-turn axial rollout is
+\begin{equation}
+P_1=2\pi qR=\pi q\ell_P.
+\label{eq:P1}
+\end{equation}
+
+Define
+\begin{equation}
+s\equiv\frac{q}{\sqrt{1+q^2}},
+\qquad
+c_\beta\equiv\frac{1}{\sqrt{1+q^2}},
+\label{eq:sc}
+\end{equation}
+so that $s=\sin\beta$, $c_\beta=\cos\beta$, and $q=\tan\beta$. Numerically,
+\begin{equation}
+s=0.4861561119\ldots,
+\qquad
+c_\beta=0.8738719785\ldots.
+\label{eq:scnumeric}
+\end{equation}
+
+The unit Frenet frame may be written as
+\begin{align}
+\bm T(\phi)
+&=\frac{1}{\sqrt{1+q^2}}
+(-\sin\phi,\cos\phi,q),
+\\
+\bm N(\phi)
+&=(-\cos\phi,-\sin\phi,0),
+\\
+\bm B(\phi)
+&=\frac{1}{\sqrt{1+q^2}}
+(q\sin\phi,-q\cos\phi,1).
+\label{eq:frenet}
+\end{align}
+For an arbitrarily oriented copy whose axis is the unit vector $\hat{\bm n}$, the tangent has the fixed positive axial projection
+\begin{equation}
+\boxed{
+\bm t\cdot\hat{\bm n}=s>0.
+}
+\label{eq:axialProjection}
+\end{equation}
+After one complete turn, the tangent and the full classical Frenet frame return to their initial orientations, while the curve advances by $P_1\hat{\bm n}$.
+
+The frame path also provides a spinorial consistency check. In a fixed-axis representation the frame evolves as one full $SO(3)$ rotation over $\phi:0\rightarrow2\pi$. Its lift to $SU(2)$ may be represented by
+\begin{equation}
+U(\phi)=\exp\!\left(-\frac{\ii\phi\sigma_z}{2}\right),
+\end{equation}
+so that
+\begin{equation}
+U(2\pi)=-I,
+\qquad
+U(4\pi)=+I.
+\label{eq:4pi}
+\end{equation}
+This is the standard double-cover property of spinorial rotations \cite{Sakurai2020}, not a derivation of the spin-statistics theorem. Its role here is only to show that a $4\pi$ return structure is available if matter inherits the local helical framing.
+
+\section{Shared-local-framing hypothesis}
+\label{sec:shared}
+
+The central new assumption of this paper is
+\begin{equation}
+\boxed{
+\mathcal G_M^{\rm local}
+\sim
+\mathcal G_S^{\rm local},
+\qquad
+\mathcal T_M\neq\mathcal T_S.
+}
+\label{eq:sharedHypothesis}
+\end{equation}
+Here $\mathcal G^{\rm local}$ denotes local framing compatibility and $\mathcal T$ denotes global topological/admissibility class. The statement is deliberately weaker than identifying a quark with a specific helix.
+
+The open-spacetime branch is represented by continued native rollout. A matter configuration must instead become globally self-consistent through closure, recurrence, or rerouting. A quark-like sector may therefore be locally admissible yet globally incomplete, while a gluon-like sector is a candidate for a framing or routing transformation that allows otherwise incomplete segments to participate in a closed network.
+
+The immediate mathematical question is whether an exact complete-turn realization of the native local framing can close without an additional operation. The next section studies that stronger ansatz; its theorem does not apply to all possible realizations of shared local framing.
+
+\section{Scope and claim levels}
+\label{sec:scope}
+
+The paper uses three distinct logical layers. The broad \emph{shared-local-framing hypothesis} motivates a possible common ancestry of matter and open spacetime but does not require matter to be a circular helix. The \emph{complete-native-segment ansatz} is a stronger geometric model used only for the closure theorem: complete nonzero-pitch circular helix turns are joined sequentially with $C^1$ tangent continuity. Finally, after that direct-gluing restriction is relaxed, the finite-dimensional map $C_N$ is introduced from prescribed post-rerouting closure data; it is not uniquely derived from an explicit completion geometry.
+
+No explicit proton, quark knot, ribbon, tube, or branching microscopic network is assumed. No pre-geometric energy density, fixed energy brick, Paper-V toy ladder, or literal null-energy flow along a helix tangent is used. The track language denotes structural support, framing, connectivity, and rerouting. Energy is the quantity organized by the state, but the paper does not yet derive the energy functional in Eq.~\eqref{eq:futureEnergyLaw}.
+
+For the operator construction, state spaces are finite dimensional with positive-definite inner products and canonical kinetic normalization unless stated otherwise; $\Lambda>0$. The normalization $\Lambda$ and $C_N$ have mass dimension one, while $G_N=C_N^\dagger C_N$ has mass dimension two. If the kinetic metric is $K\neq I$, physical squared masses arise from the generalized eigenproblem $G_Nv=m^2Kv$. The Gram, rank, and kernel statements are exact consequences once $C_N$ and the inner products are specified. The identification of $G_N$ with a relativistic mass-squared contribution is an additional physical ansatz, and algebraic similarity to a Standard-Model matrix is reported only as structural compatibility unless the dynamics and symmetries are separately derived.
+
+\section{Smooth-closure obstruction}
+\label{sec:obstruction}
+
+The broad shared-local-framing hypothesis of Sec.~\ref{sec:shared} does not itself imply the following theorem. For a tractable first test we introduce the stronger \emph{complete-native-segment ansatz}: consider a finite, oriented, sequential curve assembled from complete circular helix segments. Segment $i$ has radius $R_i>0$, signed nonzero pitch ratio $q_i$, and unit axis $\hat{\bm n}_i$. It is traversed through one complete turn with increasing local parameter and is joined directly to the next segment with $C^1$ tangent continuity. No additional completion segment is inserted.
+
+For segment $i$, the net displacement is
+\begin{equation}
+\Delta\bm r_i=2\pi R_i q_i\hat{\bm n}_i.
+\label{eq:displacement}
+\end{equation}
+Because a complete circular-helix turn returns its tangent to its initial direction, the endpoint tangent $\bm t_i$ obeys
+\begin{equation}
+\bm t_i\cdot\hat{\bm n}_i
+=\frac{q_i}{\sqrt{1+q_i^2}}.
+\end{equation}
+Hence
+\begin{equation}
+\boxed{
+\bm t_i\cdot\Delta\bm r_i
+=\frac{2\pi R_i q_i^2}{\sqrt{1+q_i^2}}>0.
+}
+\label{eq:positiveProgress}
+\end{equation}
+The positivity is independent of the sign of $q_i$. Thus changing signed pitch or handedness alone does not reverse the oriented endpoint progress appearing in Eq.~\eqref{eq:positiveProgress}.
+
+\subsection{Closure-obstruction theorem}
+
+\noindent\textbf{Proposition 1 (sequential smooth-closure obstruction).}
+\emph{A finite sequence of complete, nonzero-pitch circular helix segments cannot be joined directly with $C^1$ tangent continuity into a closed oriented curve.}
+
+\smallskip
+\noindent\textit{Proof.}
+A complete turn returns the endpoint tangent to the tangent at the beginning of that segment. Direct sequential $C^1$ joining therefore propagates one common \emph{endpoint} tangent through the entire assembly,
+\begin{equation}
+\bm t_1=\bm t_2=\cdots=\bm t_N\equiv\bm t.
+\label{eq:commonTangent}
+\end{equation}
+This does not mean that the tangent is constant along the interior of any helix segment. Spatial closure would require
+\begin{equation}
+\sum_{i=1}^{N}\Delta\bm r_i=0.
+\label{eq:axisClosure}
+\end{equation}
+Taking the dot product with the common endpoint tangent gives
+\begin{equation}
+0
+=\bm t\cdot\sum_i\Delta\bm r_i
+=\sum_i\bm t_i\cdot\Delta\bm r_i.
+\end{equation}
+Every term on the right-hand side is strictly positive by Eq.~\eqref{eq:positiveProgress}, a contradiction. \hfill$\square$
+
+The proposition concerns a single oriented sequential closed curve. It does not cover an arbitrary branching network with vertices, path choices, or additional edge rules. Nor does it establish an energy barrier or a field-theoretic selection rule. It states only that the specified complete-helical pieces cannot close through direct sequential $C^1$ gluing.
+
+The genuine escape routes are therefore changes that leave this ansatz: partial turns, additional non-helical or otherwise non-native completion segments, junctions that change the tangent/framing, variable local geometry, a non-sequential branching network, or abandonment of the complete-native-segment condition. Changing the sign of the pitch or handedness by itself is not sufficient while the remaining assumptions are retained.
+
+\subsection{Interpretation: a required rerouting sector}
+
+Under the shared-local-framing hypothesis \emph{plus} the complete-native-segment ansatz, Proposition~1 implies
+\begin{equation}
+\boxed{
+\begin{gathered}
+\text{complete native helical segments}\\
+\not\Rightarrow\\
+\text{direct sequential smooth closure}
+\end{gathered}
+}
+\label{eq:reroutingRequired}
+\end{equation}
+At least one additional completion operation must occur, such as a change of tangent/framing, a non-native connecting segment, partial-turn structure, variable geometry, a branching construction, or abandonment of the complete-native-segment ansatz.
+
+Within the current TEF ontology, a gluon-like switching/rerouting sector is the natural candidate for this additional operation. This is not a derivation of QCD gluons. The defensible statement is narrower: under the stated TEF assumptions a direct native-only sequential closure is impossible, so some completion/rerouting operation is required. The known gluon sector supplies a possible physical counterpart for later comparison, but no identification is derived here.
+
+\section{A quantitative lower bound from total curvature}
+\label{sec:curvature}
+
+The obstruction above is qualitative: it proves that direct smooth closure fails. Differential geometry also supplies a dimensionless lower bound on the amount of additional turning needed when one native turn is retained inside a smooth closed configuration.
+
+For the circular helix in Eq.~\eqref{eq:helix}, the curvature and torsion are
+\begin{equation}
+\kappa=\frac{1}{R(1+q^2)},
+\qquad
+\tau=\frac{q}{R(1+q^2)}.
+\label{eq:kappatau}
+\end{equation}
+The one-turn arc length is
+\begin{equation}
+L_1=2\pi R\sqrt{1+q^2},
+\end{equation}
+so the total curvature contributed by one native turn is
+\begin{equation}
+K_{\rm helix}
+=\int_{0}^{L_1}\kappa\,\dd s
+=\frac{2\pi}{\sqrt{1+q^2}}
+=2\pi c_\beta.
+\label{eq:Khelix}
+\end{equation}
+
+Fenchel's theorem states that every regular closed space curve has total curvature at least $2\pi$ \cite{Fenchel1929}. If one complete native turn is retained as a subcurve and the remaining interface completes a smooth closed curve, positivity of total curvature gives
+\begin{equation}
+K_{\rm int}
+\geq
+2\pi-K_{\rm helix}
+=2\pi\left(1-\frac{1}{\sqrt{1+q^2}}\right).
+\label{eq:Kint}
+\end{equation}
+Define the dimensionless Fenchel deficit
+\begin{equation}
+\boxed{
+\chi_F(q)
+\equiv
+1-\frac{1}{\sqrt{1+q^2}}.
+}
+\label{eq:chiF}
+\end{equation}
+For the frozen TEF value,
+\begin{equation}
+\boxed{
+\chi_F(q)
+=0.1261280215\ldots,
+}
+\label{eq:chiFNumeric}
+\end{equation}
+and therefore the necessary bound
+\begin{equation}
+\boxed{K_{\rm int}\ge 0.7924857314\ldots\ \mathrm{rad}.}
+\label{eq:KintNumeric}
+\end{equation}
+The same number may be expressed as $45.41^{\circ}$, but it is an accumulated total-curvature bound, not a unique junction deflection angle. Fenchel's theorem alone does not prove that this lower bound is attained, or even that it is the infimum for a completion satisfying additional endpoint, embedding, length, or thickness constraints.
+
+Equation~\eqref{eq:chiF} is not a mass formula. It is a TEF-specific dimensionless geometric lower bound obtained from the frozen helix and a global closure theorem. Unlike a freely chosen mismatch norm, its normalization is fixed by the geometry of closed curves.
+
+As a secondary necessary condition, if a future completion is additionally required to be a nontrivial knot, the F\'ary--Milnor theorem requires total curvature strictly greater than $4\pi$ \cite{Milnor1950}. This is only a necessary threshold: reaching or exceeding $4\pi$ does not prove that the curve is knotted, nor does it select any constituent count. We therefore do not use this result elsewhere in the construction.
+
+\section{Relation between the geometric obstruction and the interface construction}
+\label{sec:relation}
+
+The closure obstruction and the operator construction below are related motivations, but they are not yet a continuous derivation. Proposition~1 shows that a direct sequential assembly of complete helical segments fails. It does not construct the actual completion curve, determine its displacement, or derive a unique state-space operator.
+
+Accordingly, the branch-axis relation used below,
+\begin{equation}
+\sum_i\hat{\bm n}_i=0,
+\end{equation}
+should be read as candidate \emph{post-rerouting closure data}: it describes an axis configuration after the direct-gluing restriction has been relaxed. Any physical completion segment may itself carry displacement and curvature, which would have to be included in a complete geometric model. The present paper does not derive the weights, norm, or singular values of $C_N$ from the Fenchel deficit or from an explicit gluing geometry.
+
+Thus the logical layers are:
+\begin{equation}
+\begin{gathered}
+\text{complete-native-segment ansatz}\\
+\xrightarrow{\text{theorem}}\\
+\text{closure obstruction}\\[0.15em]
+\xrightarrow{\text{physical inference}}\\
+\text{completion/rerouting required}\\[0.15em]
+\xrightarrow{\text{operator ansatz on closure data}}\\
+C_N\\
+\xrightarrow{\text{linear algebra}}\\
+G_N=C_N^\dagger C_N\\[0.15em]
+\xrightarrow{\text{physical identification}}\\
+\text{candidate mass-squared sector}
+\end{gathered}
+\label{eq:logicalLayers}
+\end{equation}
+The obstruction theorem does not derive the operator ansatz or its physical mass identification; the Gram, rank, and kernel statements remain exact consequences once the map and inner products are specified.
+
+\section{From rerouting to an interface map}
+\label{sec:interfaceMap}
+
+The closure obstruction motivates a shift from literal microscopic track pieces to a state-space description of the required rerouting. Let
+\begin{equation}
+C:\mathcal H_{\rm in}\rightarrow\mathcal H_{\rm int}
+\label{eq:Cgeneral}
+\end{equation}
+be a linear interface map. The quantity $C|\psi\rangle$ measures the component of a state that fails to lie in the interface-null subspace under the chosen geometric coupling.
+
+The lowest-order positive, phase-insensitive quadratic measure associated with this map is
+\begin{equation}
+\|C|\psi\rangle\|^2
+=
+\langle\psi|C^\dagger C|\psi\rangle.
+\label{eq:Cnorm}
+\end{equation}
+Define first the positive Gram operator
+\begin{equation}
+\boxed{
+G\equiv C^\dagger C.
+}
+\label{eq:Gdef}
+\end{equation}
+For a positive-definite inner product this construction guarantees
+\begin{equation}
+G\ge0,
+\qquad
+\rank(G)=\rank(C),
+\qquad
+\ker G=\ker C.
+\label{eq:rankKernel}
+\end{equation}
+The additional physical ansatz of this paper is that, under canonical kinetic normalization, an interface contribution may enter a mass-squared sector as
+\begin{equation}
+\boxed{M^2=G=C^\dagger C.}
+\label{eq:M2}
+\end{equation}
+This last identification is not implied by the closure theorem or by positive factorization alone; any finite-dimensional positive semidefinite matrix admits such a factorization.
+
+The use of a mass-squared operator is natural at the observable relativistic level because
+\begin{equation}
+E^2-p^2c^2=m^2c^4
+\label{eq:massShell}
+\end{equation}
+measures the invariant departure from the null branch. Equation~\eqref{eq:M2} is therefore a candidate physical identification from geometric/interface mismatch to the positive invariant $m^2$, not a theorem and not stored ``track energy.''
+
+\section{A geometric interface map from prescribed closure data}
+\label{sec:closureMap}
+
+The abstract Gram construction becomes more specific after direct gluing has been relaxed and $C$ is separately modeled from candidate post-rerouting closure data. This section does not claim that the following map is uniquely derived from an actual completion geometry.
+
+Consider $N$ branch axes $\hat{\bm n}_i$ with nonzero dimensionless coupling weights $a_i$. Let a state in branch-amplitude space be
+\begin{equation}
+|\psi\rangle=(\psi_1,\ldots,\psi_N)^T.
+\end{equation}
+Define the complexified geometric interface map $C_N:\mathbb C^N\rightarrow\mathbb C^3$ by
+\begin{equation}
+\boxed{
+C_N|\psi\rangle
+=
+\Lambda s
+\sum_{i=1}^{N}a_i\psi_i\hat{\bm n}_i,
+}
+\label{eq:CN}
+\end{equation}
+where $\Lambda$ is an unresolved absolute interface scale and $s=q/\sqrt{1+q^2}$ is fixed by the native helix. In the operator construction we use natural units, so $\Lambda$ and $C_N$ have mass dimension one, while $G_N=C_N^\dagger C_N$ has mass dimension two.
+
+Equation~\eqref{eq:CN} is an ansatz, but its structure is geometric rather than fitted to a mass spectrum: it measures the residual weighted native-axis component carried by a branch-amplitude configuration. In matrix form, the columns of $C_N$ are $\Lambda s a_i\hat{\bm n}_i$, and therefore
+\begin{equation}
+(G_N)_{ij}
+=
+\Lambda^2s^2 a_i^*a_j
+\hat{\bm n}_i\cdot\hat{\bm n}_j.
+\label{eq:Gram}
+\end{equation}
+Thus $G_N=C_N^\dagger C_N$ is a weighted Gram matrix. It becomes a candidate mass-squared matrix only after the physical identification in Eq.~\eqref{eq:M2}.
+
+\subsection{Minimal Euclidean closure and rank}
+
+Suppose the branch axes satisfy a minimal closure relation
+\begin{equation}
+\sum_{i=1}^{N}\hat{\bm n}_i=0,
+\label{eq:minClosure}
+\end{equation}
+while any $N-1$ of them are linearly independent. In ordinary three-dimensional geometry this can occur only for
+\begin{equation}
+2\le N\le4.
+\label{eq:Nrange}
+\end{equation}
+The geometric column matrix then has rank $N-1$. Nonzero column rescaling by the $a_i$ leaves the rank unchanged, giving
+\begin{equation}
+\boxed{
+\rank C_N=N-1,
+\qquad
+\rank G_N=N-1.
+}
+\label{eq:rankN}
+\end{equation}
+Since the branch-amplitude space has dimension $N$,
+\begin{equation}
+\boxed{
+\dim\ker G_N=1.
+}
+\label{eq:oneNull}
+\end{equation}
+Thus the specified minimal $N$-branch closure map produces exactly one interface-null linear combination and $N-1$ loaded relative combinations. This is a mathematical property of the chosen map; it is not yet an unconditional particle-count prediction.
+
+For the equal-weight closure in Eq.~\eqref{eq:minClosure}, an explicit null state is
+\begin{equation}
+|\psi_0\rangle
+\propto
+\begin{pmatrix}
+1/a_1\\
+\vdots\\
+1/a_N
+\end{pmatrix},
+\qquad
+C_N|\psi_0\rangle=0.
+\label{eq:nullstate}
+\end{equation}
+The rank-one property used in earlier interface exploration is therefore not an additional matrix assumption in the minimal two-branch case; within the chosen residual-axis map it follows from the specified closure geometry.
+
+\section{Two-branch closure and a neutral-sector correspondence}
+\label{sec:twoBranch}
+
+For the minimal two-branch closure,
+\begin{equation}
+\hat{\bm n}_2=-\hat{\bm n}_1.
+\end{equation}
+Suppressing the common spatial direction, Eq.~\eqref{eq:CN} becomes
+\begin{equation}
+C_2
+=
+\Lambda s
+\begin{pmatrix}
+a_1&-a_2
+\end{pmatrix}.
+\label{eq:C2}
+\end{equation}
+Hence
+\begin{equation}
+\boxed{
+G_2
+=
+\Lambda^2s^2
+\begin{pmatrix}
+|a_1|^2&-a_1^*a_2\\
+-a_2^*a_1&|a_2|^2
+\end{pmatrix}.
+}
+\label{eq:G2matrix}
+\end{equation}
+Its determinant vanishes identically,
+\begin{equation}
+\det G_2=0,
+\end{equation}
+with spectrum
+\begin{equation}
+\spec(G_2)
+=
+\left\{0,\;
+\Lambda^2s^2(|a_1|^2+|a_2|^2)
+\right\}.
+\label{eq:G2spectrum}
+\end{equation}
+For real positive $a_i$, the null and loaded directions may be chosen as
+\begin{align}
+|\psi_0\rangle
+&\propto(a_2,a_1)^T,
+\\
+|\psi_m\rangle
+&\propto(a_1,-a_2)^T.
+\label{eq:twomodes}
+\end{align}
+
+Under the additional mass-squared identification, this Gram form is algebraically identical to the tree-level neutral electroweak mass matrix in the $(B,W^3)$ basis,
+\begin{equation}
+M_{\rm EW}^2
+\propto
+\begin{pmatrix}
+g'^2&-gg'\\-gg'&g^2\end{pmatrix},
+\label{eq:EWmatrix}
+\end{equation}
+which has one massless photon combination and one massive $Z$ combination \cite{ErlerFreitas2024}. The formal identification
+\begin{equation}
+a_1\leftrightarrow g',
+\qquad
+a_2\leftrightarrow g
+\end{equation}
+therefore maps Eq.~\eqref{eq:G2matrix} to the same rank-one structure.
+
+The comparison is deliberately limited. TEF has not constructed the $B$ or $W^3$ gauge fields, their Lorentz-vector kinetic terms, the Higgs mechanism, Ward identities, or a symmetry protecting the null mode against quantum corrections; nor has it derived $a_1$, $a_2$, the gauge group, or radiative corrections. In particular, this paper does not identify
+\begin{equation}
+q=\frac{g'}{g}.
+\end{equation}
+Earlier direct use of the frozen helix angle as an exact low-energy weak-mixing identity is not retained. In the present construction $q$ enters the common geometric magnitude $s^2$, while the sector-dependent mixing direction is carried by the ratio $a_1/a_2$.
+
+\section{Symmetric minimal closures}
+\label{sec:symmetric}
+
+For completeness, consider the maximally symmetric minimal closures in three-dimensional Euclidean space. If
+\begin{equation}
+\hat{\bm n}_i\cdot\hat{\bm n}_j
+=-\frac{1}{N-1}
+\qquad(i\neq j)
+\label{eq:simplex}
+\end{equation}
+with equal weights $a_i=1$, then
+\begin{equation}
+G_N
+=
+\Lambda^2s^2\frac{N}{N-1}
+\left(I-\frac{1}{N}J\right),
+\label{eq:simplexG}
+\end{equation}
+where $J$ is the all-ones matrix. The spectrum is
+\begin{equation}
+\boxed{
+0\quad\text{once},
+\qquad
+\Lambda^2s^2\frac{N}{N-1}
+\quad\text{with multiplicity }N-1.
+}
+\label{eq:simplexSpec}
+\end{equation}
+For the frozen $q$, the nonzero eigenvalue in units of $\Lambda^2$ is
+\begin{equation}
+\begin{array}{c|c}
+N&\lambda_{\rm load}/\Lambda^2\\
+\hline
+2&0.47269553\\
+3&0.35452165\\
+4&0.31513035
+\end{array}
+\label{eq:values}
+\end{equation}
+These numbers are eigenvalues of the chosen Gram operator, not particle-mass predictions. Their purpose is to show that the closure ansatz produces definite rank and degeneracy patterns before any physical mass identification or absolute scale is fixed. With the normalization $\Lambda$ unresolved, the common factor $s(q)$ can be absorbed into $\Lambda_{\rm eff}=\Lambda s$ and therefore does not by itself yield an independently testable spectral prediction; the rank and kernel results require only $s\neq0$. This differs from the Fenchel deficit, where the frozen $q$ enters a dimensionless geometric lower bound directly. For $N>4$ in three spatial dimensions, additional linear dependencies necessarily occur, so the one-null-mode result does not extend without further structure.
+
+\section{Charged and fermionic consistency checks}
+\label{sec:consistency}
+
+The paper does not attempt to derive the full electroweak or flavor sectors, but two consistency checks are useful.
+
+\subsection{Conjugate charged transitions}
+
+For a two-state matter doublet $|U\rangle,|D\rangle$, define
+\begin{equation}
+T_+=|U\rangle\langle D|,
+\qquad
+T_-=T_+^\dagger.
+\label{eq:Tpm}
+\end{equation}
+If $Q$ is the electric-charge operator, then
+\begin{equation}
+[Q,T_\pm]
+=\pm(Q_U-Q_D)T_\pm.
+\label{eq:chargeComm}
+\end{equation}
+For Standard-Model weak doublets, $Q_U-Q_D=e$. If coefficients $W^\pm$ are assigned their usual physical charges, a neutral schematic interaction pairs opposite charges,
+\begin{equation}
+\boxed{
+V_{\rm ch}=W^-T_+ + W^+T_-.
+}
+\label{eq:chargedPairing}
+\end{equation}
+This subsection is only a consistency of conjugate-transition notation. Hermiticity constrains the two coefficients to be conjugate in an appropriate field description, but it does not by itself prove equality of particle and antiparticle pole masses; that requires the kinetic, relativistic, symmetry, and ultimately CPT structure of a complete theory. No such derivation is claimed here.
+
+\subsection{Fermionic interface maps}
+
+As a limited compatibility check, work in natural units on a flat background with canonical kinetic normalization and let $C_f$ be a constant internal map,
+\begin{equation}
+C_f:\mathcal H_R\rightarrow\mathcal H_L.
+\end{equation}
+Then schematically,
+\begin{align}
+p\!\cdot\!\bar\sigma\,\psi_L&=C_f\psi_R,
+\\
+p\!\cdot\!\sigma\,\psi_R&=C_f^\dagger\psi_L.
+\end{align}
+Combining the two equations gives
+\begin{align}
+p^2\psi_L&=C_fC_f^\dagger\psi_L,
+\\
+p^2\psi_R&=C_f^\dagger C_f\psi_R.
+\label{eq:fermionM2}
+\end{align}
+Under these restrictions, the physical squared masses are singular-value squares of the constant internal map. This demonstrates compatibility between the factorized ansatz and the standard flat-background chiral wave-state algebra. If $C_f$ varies in spacetime or is promoted to a connection-dependent operator, derivatives and additional connection terms enter the squared equations, so Eq.~\eqref{eq:fermionM2} does not apply unchanged. It does not explain fermion mass hierarchies, the number of generations, CKM mixing, or PMNS mixing; those are explicitly deferred.
+
+\section{The $10^{19}$ hierarchy as an unresolved scale constraint}
+\label{sec:hierarchy}
+
+Earlier energy-first work emphasized the ratio between the primitive TEF rollout and hadronic characteristic lengths. With
+\begin{equation}
+P_1=\pi q\ell_P\simeq2.82\times10^{-35}\ \mathrm{m},
+\end{equation}
+a nuclear-scale length of order $1\,\mathrm{fm}$ gives
+\begin{equation}
+\frac{1\,\mathrm{fm}}{P_1}\simeq3.5\times10^{19}.
+\label{eq:hierarchy}
+\end{equation}
+The proton Compton wavelength produces the same order of magnitude. This identifies a real scale separation, but it does not explain it. In particular, the present interface construction does not derive $10^{19}$, and the number should not be interpreted as a literal count of microscopic pieces.
+
+The factorization
+\begin{equation}
+M^2=C^\dagger C
+\end{equation}
+recasts the hierarchy as a future constraint on the normalization and singular values of $C$. If $C=\Lambda A$, then
+\begin{equation}
+m_i=\Lambda s_i(A).
+\end{equation}
+A future theory must explain why the relevant singular amplitudes are extremely small relative to a primitive scale. Simple equal-amplitude wave-function dilution is insufficient: normalization over $N$ equal support states naturally produces local amplitudes $N^{-1/2}$, not the $N^{-1}$ behavior that would be required by a naive direct identification of a $10^{19}$ length hierarchy with a $10^{-19}$ mass ratio.
+
+The hierarchy is therefore retained as an unresolved matter--spacetime scale-matching problem, not as the central result of this paper.
+
+\section{Evidence levels and failure boundaries}
+\label{sec:evidence}
+
+Table~\ref{tab:evidence} separates mathematical consequences, TEF assumptions, correspondences, and failed shortcuts.
+
+\begin{table*}[t]
+\centering
+\caption{Status of the main claims in the present construction.}
+\label{tab:evidence}
+\small
+\begin{tabular}{p{0.25\textwidth} p{0.22\textwidth} p{0.43\textwidth}}
+\toprule
+Statement & Status & Boundary of interpretation \\
+\midrule
+Frozen helix $(R,q,\text{handedness})$ & Inherited TEF ansatz & Conditional on Paper I \\
+Smooth-closure obstruction & Exact under stated assumptions & Sequential oriented curve of complete nonzero-pitch circular helices with direct $C^1$ joining; not a theorem for arbitrary networks \\
+$\chi_F(q)=1-(1+q^2)^{-1/2}$ & Exact conditional lower-bound factor & Fenchel deficit; no attainment or exact minimum is proved \\
+Additional completion/rerouting operation is required & Conditional consequence & Only under the complete-native-segment ansatz; does not identify the operation with QCD gluons \\
+$G=C^\dagger C$ & Exact Gram construction after choosing $C$ & Positive semidefinite; not yet a mass mechanism by itself \\
+$M^2=G$ & Physical ansatz & Requires kinetic normalization and a covariant dynamical embedding \\
+$\rank G_N=N-1$ for minimal Euclidean closure & Exact consequence of Eq.~\eqref{eq:CN} & Restricted to $2\le N\le4$ with one minimal linear dependence and nonzero weights \\
+Two-branch null + loaded Gram modes & Exact within chosen closure map & No symmetry protection or particle identification is derived; $\gamma/Z$ is only a structural correspondence \\
+$4\pi$ spinorial return & Standard $SU(2)\to SO(3)$ property & Compatibility check; not a derivation of spin statistics \\
+$10^{19}$ primitive-to-hadronic hierarchy & Identified scale separation & Not a derived mechanism or microscopic count \\
+Direct $q=g'/g$ at low energy & Rejected shortcut & Not used in this paper \\
+Simple rerouting-angle norm as full mass formula & Rejected shortcut & Geometry may contribute to $C$, but does not by itself fix particle masses \\
+Literal null-energy flow along helix tangent & Rejected earlier trial & Helix is treated as framing/connectivity, not a classical energy trajectory \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The construction should be revised or abandoned if a microscopic completion shows that matter cannot locally inherit the native helical framing, if the closure map cannot be embedded in a Lorentz-covariant unitary theory, if the required rerouting contradicts established QCD structure, or if a more complete formulation removes rather than refines the closure obstruction.
+
+Several tempting extensions are deliberately excluded. This paper does not fit charged-lepton or quark masses, derive CKM or PMNS matrices, identify a concrete quark topology, assign $q$ to arbitrary QCD response-length ratios, or use the numerical coincidence $q/\pi\simeq0.178$ as evidence. Those steps would exceed the current derivational support.
+
+\section{Discussion}
+\label{sec:discussion}
+
+The main change introduced here is conceptual but mathematically testable. Earlier TEF work kept open spacetime and closed matter on separate branches because the microscopic matter geometry was unknown. The present paper tests a more economical possibility: they may share local framing while differing in global organization. Shared framing alone is only a physical hypothesis; the stronger complete-native-segment ansatz makes a definite geometric statement. Under that ansatz, the positive endpoint tangent--displacement product of every complete nonzero-pitch circular helix segment prevents direct sequential $C^1$ closure. A completion operation outside the ansatz is therefore required.
+
+That obstruction gives the structural track picture a sharper role. The point is not to replace quantum fields by classical rails and balls. It is to ask whether some particle and mediator distinctions of the effective theory can reflect different structural roles in a common underlying network. Ordinary matter-like segments may supply locally admissible support, whereas a gluon-like sector is a natural candidate for rerouting or reconnection. In such a description the network constrains how energy is organized and redistributed. A strong-interaction process would then be sought, at a deeper level, as a change in the connectivity of an energy-bearing state, while recovering the established quantum-field description in an appropriate effective limit. The present theorem does not identify the QCD gluon with that role, but it gives a concrete reason why a rerouting operation must be investigated under the native-segment assumptions.
+
+The missing ingredient is equally important. A structural theory becomes quantitatively compelling only when it supplies an energy law. If an eventual $E[\mathcal C]$ or $\hat H[\mathcal C]$ assigned energies to admissible closures and reroutings and the same law then reproduced multiple independent masses, excitation gaps, decay balances, binding energies, and interaction observables, the matter--spacetime picture would become directly testable. The present paper is one step earlier: it constrains the allowed structure and constructs an interface operator scaffold, but it does not yet calculate the energy carried by a specific proton, quark configuration, or rerouting event.
+
+After a separate interface map $C$ is chosen, the positive quadratic $G=C^\dagger C$ measures interface loading in that model, while its kernel consists of combinations null with respect to the chosen map. Identifying $G$ with a physical mass-squared contribution remains an additional ansatz. The two-branch example is particularly instructive: a minimal opposite-axis closure has one geometric dependence and therefore one null state, and the resulting weighted Gram matrix has the same algebraic rank-one pattern as the neutral electroweak mass matrix. This is structural compatibility only; the couplings, gauge symmetry, Higgs dynamics, renormalization structure, and quantum protection of the null mode remain external.
+
+The dimensionless Fenchel deficit in Eq.~\eqref{eq:chiF} supplies a separate quantitative anchor. It shows that the frozen helix leaves a definite, nonzero amount of total curvature to be supplied by whatever completes a one-turn closed configuration. Unlike the common prefactor $s(q)$ in the present Gram spectrum, this curvature bound carries an explicit, normalization-independent dependence on the frozen $q$. With $\Lambda$ unresolved, the common factor $s(q)$ in $C_N=\Lambda s A_N$ can be absorbed into $\Lambda_{\rm eff}$ and therefore does not by itself provide an independent spectral test of $q$.
+
+The wave-function question remains important. Nothing in the construction requires the branches to be classical localized objects. The amplitudes $\psi_i$ in Eq.~\eqref{eq:CN} may instead describe support components in a quantum state. Closure and rerouting would then constrain the allowed state-space geometry, while energy and mass arise from Hamiltonian expectation values and spectra. A future TEF dynamics should therefore be tested explicitly against Schr\"odinger, Dirac, and quantum-field descriptions rather than presented as a replacement for wave mechanics.
+
+Finally, the present paper deliberately stops before the fermion mass hierarchy. Once a primitive interface law fixes $C$ rather than merely its geometric factorization, mass ratios and flavor structure become meaningful downstream questions. Attempting to fit them now would replace a structural derivation with parameter hunting.
+
+\section{Conclusion}
+
+This paper studies a conditional matter--spacetime interface for the TEF program while separating theorem, boundary assumption, operator construction, and physical identification.
+
+The broad hypothesis is that matter and open spacetime may share compatible local framing while belonging to different global topological classes. A stronger complete-native-segment ansatz is then introduced for a tractable geometric test. For any oriented complete nonzero-pitch circular helix segment, the endpoint tangent has strictly positive dot product with the segment displacement. Consequently, a finite sequence of such complete segments cannot be joined directly with $C^1$ tangent continuity into a closed oriented curve. This obstruction survives a sign change of the pitch: handedness reversal alone is not an escape while the other assumptions remain fixed.
+
+Fenchel's theorem gives a separate necessary quantitative bound. If one frozen native TEF turn is retained as a subcurve of a smooth closed completion,
+\begin{equation}
+\boxed{
+K_{\rm int}
+\ge
+2\pi\left(1-\frac{1}{\sqrt{1+q^2}}\right)
+=2\pi\chi_F(q).
+}
+\end{equation}
+For the frozen TEF value,
+\begin{equation}
+\boxed{
+\chi_F(q)=0.1261280215\ldots,
+}
+\end{equation}
+so the required additional total curvature is at least $0.7924857314\ldots$ rad. This is a lower bound, not a demonstrated exact minimum or a unique junction angle.
+
+After the direct-gluing restriction is relaxed, we separately introduce a closure-sensitive interface map $C_N$ from candidate post-rerouting branch-axis data. Its Gram operator
+\begin{equation}
+\boxed{G_N=C_N^\dagger C_N}
+\end{equation}
+is positive semidefinite. For a minimal Euclidean $N$-branch closure with nonzero weights, the chosen map has rank $N-1$ and exactly one interface-null combination. In the two-branch case, $G_2$ is rank one and has one null and one loaded mode. Its algebraic form matches the tree-level neutral electroweak mass-matrix pattern, but no gauge fields, symmetry protection, Higgs dynamics, or electroweak couplings are derived.
+
+The further identification
+\begin{equation}
+\boxed{M^2=G=C^\dagger C}
+\end{equation}
+is therefore retained as a physical ansatz, not a theorem. A complete theory must derive $C$ from an explicit completion geometry or dynamical interface law, specify kinetic normalization, and explain how the null and nonzero Gram modes map to covariant quantum fields. The previously identified $10^{19}$ primitive-to-hadronic hierarchy remains a constraint on that future normalization rather than a mechanism already explained here.
+
+The broader physical program is correspondingly clear but unfinished. TEF ultimately requires a rule that assigns energy to admissible structural states and transitions. The track language is therefore shorthand for geometry and connectivity that organize energy, not for classical rails populated by new microscopic particles. A successful completion would have to use one common structural-energy law to account for several independent physical quantities rather than fit each sector separately. Paper VI establishes geometric and operator constraints intended to make that later energy law more specific.
+
+The present logical structure is thus
+\begin{equation}
+\boxed{
+\begin{gathered}
+\text{boundary assumptions}
+\xrightarrow{\text{theorem}}
+\text{closure obstruction}\\
+\xrightarrow{\text{physical inference}}
+\text{completion/rerouting required}\\
+\xrightarrow{\text{operator ansatz}}
+C_N
+\xrightarrow{\text{linear algebra}}
+G_N=C_N^\dagger C_N\\
+\xrightarrow{\text{physical identification}}
+\text{candidate }M^2
+\end{gathered}
+}
+\label{eq:finalChain}
+\end{equation}
+The open problem is now sharply defined: derive the completion geometry and the map $C$ rather than infer them from observed masses. Whether such a construction can be embedded in a Lorentz-covariant unitary quantum-field theory is the next theoretical consistency test.
+
+\begin{thebibliography}{99}
+\small
+
+\bibitem{ErlerFreitas2024}
+J.~Erler and A.~Freitas,
+``Electroweak Model and Constraints on New Physics,''
+in \emph{Review of Particle Physics}, revised April 2024,
+Particle Data Group,
+\href{https://pdg.lbl.gov/2024/reviews/rpp2024-rev-standard-model.pdf}{PDG electroweak review}.
+
+\bibitem{Fenchel1929}
+W.~Fenchel,
+``\"Uber Kr\"ummung und Windung geschlossener Raumkurven,''
+Math. Ann. \textbf{101}, 238--252 (1929),
+\href{https://doi.org/10.1007/BF01454836}{doi:10.1007/BF01454836}.
+
+\bibitem{Milnor1950}
+J.~W.~Milnor,
+``On the Total Curvature of Knots,''
+Ann. Math. \textbf{52}, 248--257 (1950),
+\href{https://doi.org/10.2307/1969467}{doi:10.2307/1969467}.
+
+\bibitem{Sakurai2020}
+J.~J.~Sakurai and J.~Napolitano,
+\emph{Modern Quantum Mechanics}, 3rd ed.
+(Cambridge University Press, Cambridge, 2020).
+
+\bibitem{WuWeakMixing}
+X.~Wu,
+``A Helical Spacetime Ansatz Linking the Planck Scale and Electroweak Mixing,''
+Version 5.1 (2026), Zenodo,
+\href{https://doi.org/10.5281/zenodo.22101000}{doi:10.5281/zenodo.22101000}.
+
+\bibitem{WuMatterSpace}
+X.~Wu,
+``Closed Matter and Open Space: A Relative-Framing Ansatz for Incomplete Quark Sectors and the Matter--Space Interface,''
+Version 4.6 (2026), Zenodo,
+\href{https://doi.org/10.5281/zenodo.22256714}{doi:10.5281/zenodo.22256714}.
+
+\bibitem{WuConfinement}
+X.~Wu,
+``From a Gravity-Calibrated Helix to a Strong-Interaction Confinement Correspondence,''
+Version 4.1 (2026), Zenodo,
+\href{https://doi.org/10.5281/zenodo.22412464}{doi:10.5281/zenodo.22412464}.
+
+\end{thebibliography}
+
+\end{document}
