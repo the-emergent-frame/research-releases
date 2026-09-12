@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite this version-specific Zenodo record."
+title: "The Emergent Frame: A Minimal Framework for Spacetime Rollout, Interaction, and Excitation"
+authors:
+  - family-names: Wu
+    given-names: Xiaodan
+    orcid: "https://orcid.org/0009-0005-5892-0293"
+    affiliation: "Independent Researcher"
+version: "2.5"
+date-released: 2026-09-12
+doi: "10.5281/zenodo.22723329"
+url: "https://doi.org/10.5281/zenodo.22723329"
+license: CC-BY-4.0

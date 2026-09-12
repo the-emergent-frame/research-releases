@@ -1,0 +1,20 @@
+{
+  "helix": {
+    "shape_parameter_q": 0.5563241800453369,
+    "phase_closure_residual": 1.1102230246251565e-16,
+    "planck_length_m": 1.6162550244237053e-35,
+    "primitive_radius_m": 8.081275122118526e-36,
+    "pitch_parameter_m": 4.495808756033369e-36,
+    "one_turn_axial_advance_m": 2.8247999519798197e-35
+  },
+  "closure_calibration": {
+    "interaction_scale_gev": 246.21965079413738,
+    "closure_scale_mev": 444.56093603413484,
+    "lattice_benchmark_mev": 445.0,
+    "relative_difference_percent": -0.09866605974497963
+  },
+  "global_rollout_bookkeeping": {
+    "planck_energy_gev": 1.2208901285838959e+19,
+    "rollout_scale_gev": 2.1338033444481475e+19
+  }
+}

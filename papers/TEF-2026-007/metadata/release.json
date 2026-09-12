@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "tef_id": "TEF-2026-007",
+  "title": "The Emergent Frame: A Minimal Framework for Spacetime Rollout, Interaction, and Excitation",
+  "authors": ["Xiaodan Wu"],
+  "orcid": "0009-0005-5892-0293",
+  "version": "v2.5",
+  "release_date": "2026-09-12",
+  "status": "Preprint; not peer reviewed",
+  "license": "CC-BY-4.0",
+  "zenodo_doi": "10.5281/zenodo.22723329",
+  "zenodo_concept_doi": "10.5281/zenodo.22723328",
+  "canonical_url": "https://doi.org/10.5281/zenodo.22723329",
+  "project_url": "https://theemergentframe.org",
+  "pdf": {
+    "path": "paper/manuscript.pdf",
+    "sha256": "856069c5a2ffec5520b0552cf8db14429656c1e48674340f0e425054c91520b3"
+  },
+  "source": {
+    "path": "paper/manuscript.tex",
+    "sha256": "23adebf6968e6d9ab9a90caa155d1b318b84420ee87ca3a16ec3035156f99814"
+  }
+}
