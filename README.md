@@ -15,6 +15,7 @@ The canonical human-readable records are maintained on the TEF website. Zenodo i
 | [TEF-2026-005](papers/TEF-2026-005/) | From a Gravity-Calibrated Helix to a Strong-Interaction Confinement Correspondence | v4.1 | Preprint; not peer reviewed | [10.5281/zenodo.22412464](https://doi.org/10.5281/zenodo.22412464) |
 | [TEF-2026-006](papers/TEF-2026-006/) | From a Gravity-Calibrated Helix to a Matter–Spacetime Interface: Closure Obstruction and a Factorized Mass-Squared Ansatz | v3.2 | Preprint; not peer reviewed | [10.5281/zenodo.22649267](https://doi.org/10.5281/zenodo.22649267) |
 | [TEF-2026-007](papers/TEF-2026-007/) | The Emergent Frame: A Minimal Framework for Spacetime Rollout, Interaction, and Excitation | v2.5 | Preprint; not peer reviewed | [10.5281/zenodo.22723329](https://doi.org/10.5281/zenodo.22723329) |
+| [TEF-2026-008](papers/TEF-2026-008/) | Spacetime as Source-Local Rollout and the Conditional Emergence of Three-Dimensional Effective Geometry in The Emergent Frame | v3.12 | Preprint; not peer reviewed | [10.5281/zenodo.22776137](https://doi.org/10.5281/zenodo.22776137) |
 
 ## Verify
 

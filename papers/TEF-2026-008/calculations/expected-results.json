@@ -1,0 +1,28 @@
+{
+  "volume_growth": {
+    "reference_radius": 100,
+    "ideal_shell_sum": 666700,
+    "ideal_closed_form": 666700,
+    "endpoint_corrected_shell_sum": 686901,
+    "transverse_volume_dimension": 2,
+    "longitudinal_volume_dimension": 1,
+    "product_volume_dimension": 3
+  },
+  "bulk_scaling": {
+    "walk_dimension": 2,
+    "heat_kernel_time_exponent": -1.5,
+    "green_distance_exponent": -1.0
+  },
+  "hydrogen_consistency": {
+    "potential_exponent": 1.0,
+    "binding_n_exponent": -2.0
+  },
+  "gauge_covariance": {
+    "link_observable_real": -0.6810558805071526,
+    "link_observable_imag": -0.7322314440302513,
+    "frame_transformation_residual": 1.5700924586837752e-16,
+    "loop_covariant_phase_sum": -0.5,
+    "negative_link_phase_sum": -0.49999999999999994,
+    "weighted_coherence": 0.5747351044155188
+  }
+}

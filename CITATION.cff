@@ -80,3 +80,13 @@ references:
     version: "2.5"
     doi: "10.5281/zenodo.22723329"
     url: "https://doi.org/10.5281/zenodo.22723329"
+  - type: article
+    title: "Spacetime as Source-Local Rollout and the Conditional Emergence of Three-Dimensional Effective Geometry in The Emergent Frame"
+    authors:
+      - family-names: Wu
+        given-names: Xiaodan
+        orcid: "https://orcid.org/0009-0005-5892-0293"
+    year: 2026
+    version: "3.12"
+    doi: "10.5281/zenodo.22776137"
+    url: "https://doi.org/10.5281/zenodo.22776137"

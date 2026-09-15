@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "tef_id": "TEF-2026-008",
+  "title": "Spacetime as Source-Local Rollout and the Conditional Emergence of Three-Dimensional Effective Geometry in The Emergent Frame",
+  "authors": ["Xiaodan Wu"],
+  "orcid": "0009-0005-5892-0293",
+  "version": "v3.12",
+  "release_date": "2026-09-16",
+  "status": "Preprint; not peer reviewed",
+  "license": "CC-BY-4.0",
+  "zenodo_doi": "10.5281/zenodo.22776137",
+  "zenodo_concept_doi": "10.5281/zenodo.22776136",
+  "canonical_url": "https://doi.org/10.5281/zenodo.22776137",
+  "project_url": "https://theemergentframe.org",
+  "pdf": {
+    "path": "paper/manuscript.pdf",
+    "sha256": "169c6d1316ce9340f2959e87fdff2b50acf9f1a680988a914d95eca70f25a128"
+  },
+  "source": {
+    "path": "paper/manuscript.tex",
+    "sha256": "01c96edc67c369e812ff6b3366aa3d57e4222deee427e30083d75e2e59b13dee"
+  }
+}
