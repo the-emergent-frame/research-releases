@@ -90,3 +90,13 @@ references:
     version: "3.12"
     doi: "10.5281/zenodo.22776137"
     url: "https://doi.org/10.5281/zenodo.22776137"
+  - type: article
+    title: "Rollout Connection Dynamics and a Maxwell–Lorentz-Compatible Low-Energy Electromagnetic Sector in The Emergent Frame"
+    authors:
+      - family-names: Wu
+        given-names: Xiaodan
+        orcid: "https://orcid.org/0009-0005-5892-0293"
+    year: 2026
+    version: "3.3"
+    doi: "10.5281/zenodo.22849547"
+    url: "https://doi.org/10.5281/zenodo.22849547"

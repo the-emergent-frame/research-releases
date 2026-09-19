@@ -1,0 +1,43 @@
+{
+  "quadratic_response": {
+    "effective_magnetic_block": [
+      [1.179725085910653, 0.1077319587628866],
+      [0.1077319587628866, 0.9762886597938144]
+    ],
+    "effective_block_eigenvalues": [0.9298422016020124, 1.226171544102455],
+    "stationary_flux": [0.35927835051546386, -0.32852233676975945],
+    "original_lagrangian": 0.10661683848797249,
+    "effective_lagrangian": 0.10661683848797249,
+    "elimination_residual": 0.0
+  },
+  "compact_gauge": {
+    "plaquette_flux": 0.6,
+    "transformed_plaquette_flux": 0.6,
+    "flux_residual": 0.0,
+    "holonomy_real": 0.8253356149096783,
+    "holonomy_imag": -0.5646424733950354,
+    "periodicity_residual": 0.0
+  },
+  "maxwell_representative": {
+    "electric_stiffness": 9.0,
+    "magnetic_stiffness": 4.0,
+    "epsilon": 0.1111111111111111,
+    "mu": 0.25,
+    "speed": 6.0,
+    "impedance": 1.5,
+    "epsilon_mu_product": 0.027777777777777776,
+    "plane_wave_omega": 30.0,
+    "wavevector_dot_electric": 0.0,
+    "magnetic_field": [0.0, 0.0, -0.8333333333333334],
+    "energy_density": 2.7777777777777777,
+    "poynting": [10.0, 13.333333333333334, 0.0],
+    "poynting_magnitude": 16.666666666666668,
+    "speed_times_energy_density": 16.666666666666664
+  },
+  "lorentz_force": [2.9, -4.4, 1.55],
+  "normalization": {
+    "dimensionless_coupling": 0.25136212947674824,
+    "rescaled_dimensionless_coupling": 0.25136212947674824,
+    "rescaling_residual": 0.0
+  }
+}

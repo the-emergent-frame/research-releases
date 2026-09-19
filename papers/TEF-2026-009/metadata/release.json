@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "tef_id": "TEF-2026-009",
+  "title": "Rollout Connection Dynamics and a Maxwell–Lorentz-Compatible Low-Energy Electromagnetic Sector in The Emergent Frame",
+  "authors": ["Xiaodan Wu"],
+  "orcid": "0009-0005-5892-0293",
+  "version": "v3.3",
+  "release_date": "2026-09-19",
+  "status": "Preprint; not peer reviewed",
+  "license": "CC-BY-4.0",
+  "zenodo_doi": "10.5281/zenodo.22849547",
+  "zenodo_concept_doi": "10.5281/zenodo.22849546",
+  "canonical_url": "https://doi.org/10.5281/zenodo.22849547",
+  "project_url": "https://theemergentframe.org",
+  "pdf": {
+    "path": "paper/manuscript.pdf",
+    "sha256": "7980abe97de5691068428331459a2e17dd0408553aafd1fadb665bc4c5df0e9a"
+  },
+  "source": {
+    "path": "paper/manuscript.tex",
+    "sha256": "ae6f5b9b46785f2b6e0cc2bf6657c9bd4a845b7a6f29be686a4c3a0cc6db4f6a"
+  }
+}

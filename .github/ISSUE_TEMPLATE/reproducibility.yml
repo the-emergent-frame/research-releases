@@ -17,6 +17,7 @@ body:
         - TEF-2026-006 v3.2
         - TEF-2026-007 v2.5
         - TEF-2026-008 v3.12
+        - TEF-2026-009 v3.3
     validations:
       required: true
   - type: input

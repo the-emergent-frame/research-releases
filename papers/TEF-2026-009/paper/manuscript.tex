@@ -1,0 +1,1134 @@
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper,margin=0.80in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{amsthm}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage{balance}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\setstretch{1.10}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{1.25em}
+\setlength{\columnsep}{0.28in}
+\raggedbottom
+\setlength{\emergencystretch}{2em}
+\captionsetup{font=small,labelfont=bf}
+
+\titleformat{\section}
+  {\large\bfseries\raggedright\hyphenpenalty=10000\exhyphenpenalty=10000}
+  {\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\normalsize\bfseries\raggedright\hyphenpenalty=10000\exhyphenpenalty=10000}
+  {\thesubsection}{0.50em}{}
+\titlespacing*{\section}{0pt}{1.15em}{0.45em}
+\titlespacing*{\subsection}{0pt}{0.90em}{0.35em}
+
+\hypersetup{
+  hidelinks,
+  pdftitle={Rollout Connection Dynamics and a Maxwell-Lorentz-Compatible Low-Energy Electromagnetic Sector in The Emergent Frame},
+  pdfauthor={Xiaodan Wu},
+  pdfinfo={ORCID={0009-0005-5892-0293}, Version={3.3}, DOI={10.5281/zenodo.22849547}}
+}
+
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+\newcommand{\TEF}{\mathrm{TEF}}
+\newcommand{\R}{\mathbb{R}}
+
+\title{\bfseries Rollout Connection Dynamics and a Maxwell--Lorentz-Compatible Low-Energy Electromagnetic Sector in The Emergent Frame}
+\author{\small Xiaodan Wu\textsuperscript{1,*}\\[-0.10em]
+\footnotesize \textsuperscript{1}Independent Researcher\textsuperscript{\(\dagger\)}}
+\date{\footnotesize September 2026 \quad Version 3.3}
+
+\begin{document}
+\twocolumn[
+\begin{@twocolumnfalse}
+\maketitle
+\vspace{-0.85em}
+\begingroup
+\normalsize
+\setstretch{1.10}
+\begin{center}
+\textbf{Abstract}
+\end{center}
+\noindent
+The Emergent Frame (TEF) treats spacetime as a source-local relational structure realized through a multi-helix rollout ensemble. We construct an effective connection framework and test its conditional compatibility with classical Maxwell--Lorentz electrodynamics. Adopted transverse-frame comparison supplies a compact $U(1)$ connection; an assumed local Hamiltonian with a positive nondegenerate physical quadratic Hessian supplies its dynamics.
+
+Expansion around an admissible locally flat reference connection and elimination of canonical flux give discrete Maxwell-like equations, including general electric--magnetic mixing. Under assumed smooth continuum interpolation and homogeneous isotropic leading response, with mixing absent or restricted to a constant bulk topological term under specified boundary conditions, the representative equations have Maxwell form. Matching the effective propagation speed to the rollout causal speed gives two transverse wave modes with $\omega=ck$. An additionally selected electric-monopole minimal coupling yields the Lorentz force on an assumed localized charged envelope in smooth external fields, together with consistent field energy and momentum exchange.
+
+As one component of the TEF research program, this is a conditional classical effective construction, not a microscopic continuum-convergence or phase-existence theorem. Compactness classifies allowed charge representations but does not establish a realized charged spectrum. A finite-energy, stable, gapped multi-helix resonance tentatively assigned the unit negative label remains an unconstructed electron candidate. Deriving the effective response, sustaining the smooth regime, constructing charged modes, and fixing their normalization are the principal remaining tasks. Systematic quantization and QED comparison are deferred.
+
+\endgroup
+\vspace{1.15em}
+\end{@twocolumnfalse}
+]
+\begingroup
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\footnotetext[1]{\href{mailto:xiaodan@theemergentframe.org}{xiaodan@theemergentframe.org}}
+\footnotetext[2]{\href{https://theemergentframe.org}{https://theemergentframe.org}; ORCID: \href{https://orcid.org/0009-0005-5892-0293}{0009-0005-5892-0293}; DOI: \href{https://doi.org/10.5281/zenodo.22849547}{10.5281/zenodo.22849547}.}
+\endgroup
+
+
+\section{Introduction}
+
+The Emergent Frame (TEF) is a speculative research program in which persistent closed matter realizes source-local spacetime through a multi-helix rollout ensemble. Earlier work introduced a helical ansatz and conditional constant correspondences \cite{wu2026helical,wu2026fine}, a matter--spacetime interface \cite{wu2026interface}, the distinction between rollout sources and excitations \cite{wu2026minimal}, and conditional effective three-dimensional geometry \cite{wu2026geometry}. The present paper asks whether a connection on that realized relational structure can support an effective classical electromagnetic description.
+
+The calculation proceeds from compact link variables to an assumed quadratic connection dynamics, then to Maxwell representative equations under an explicit continuum interpolation. A separately assumed charged envelope with leading monopole coupling provides the Lorentz-force test. Compatibility here concerns this classical field--force system; it does not establish microscopic Lorentz invariance, a convergent continuum limit, or the existence of electron-like modes. Nor are the measured electromagnetic constants derived.
+
+The mathematical ingredients have established precedents. Compact lattice gauge theory supplies link variables, Gauss constraints, and weak-field expansions \cite{kogut1979}; discrete exterior calculus supplies the cochain structure \cite{desbrun2005dec}. String-net and rotor models demonstrate emergent gauge and matter sectors with additional microscopic structure \cite{levinwen2005,levinwen2006}, while Quantum Graphity separates emergent locality from gauge dynamics \cite{konopka2008}. Other approaches connect gauge structure with emergent spacetime or relational transport \cite{copinger2023,arneth2026}. These comparisons motivate the construction but do not establish its TEF realization.
+
+The TEF-specific proposal is the source-local rollout carrier and its transverse-frame interpretation. The effective Hamiltonian, smooth interpolation, constitutive response, and matter coupling are additional assumptions. Their conditional consequences and remaining microscopic obligations are distinguished throughout and collected in the final discussion.
+
+\section{Inherited TEF Geometry}
+
+\subsection{Primitive helix and rollout ensemble}
+
+The local helical ansatz inherited from Paper I may be written
+\begin{equation}
+\bm r(\phi)
+=
+\left(
+R\cos\phi,\,
+R\sin\phi,\,
+qR\phi
+\right),
+\end{equation}
+where $R$ is the primitive transverse radius and $q$ is the dimensionless pitch parameter. We retain the notation $q$ of the earlier TEF papers exclusively for this geometric parameter. Electric charge is denoted by $Q$, with the tentative unit-label candidate charge $Q=-e_*$; no identification between $q$ and charge is intended. One intrinsic cycle has length
+\begin{equation}
+L_h
+=
+2\pi R\sqrt{1+q^2}.
+\end{equation}
+
+The present construction does not identify physical space with one such curve. Following Paper VIII, a source-local rollout is represented by an ensemble
+\begin{equation}
+\Gamma_S
+=
+\{\gamma_\alpha\}_{\alpha\in\mathcal A_S},
+\end{equation}
+whose transverse relational organization is encoded by a weighted cell complex. The effective spatial dimension is a large-scale property of this ensemble, not of one isolated helix \cite{wu2026geometry}.
+
+The physical longitudinal metric is taken to follow intrinsic rollout distance rather than an externally given axial projection. This assumption avoids treating the helix as a curve embedded in a more fundamental background space, which would contradict the intended source-local ontology. A deeper derivation of the emergent metric remains outside the scope of the present paper.
+
+\subsection{Excitations on realized rollout}
+
+Following Paper VII, excitations may carry energy, momentum, stress, and charge and backreact on the ensemble, but are not assigned an independent closed-matter rollout-source identity \cite{wu2026minimal}. The electromagnetic candidate is a transverse collective connection mode. The electron-like candidate is a hypothetical finite-energy, stable, gapped charged resonance supported coherently across multiple helices, with tentative representation label $n=-1$. Neither a single helix oscillating in isolation nor a point object travelling along it is the intended model. The candidate's existence, internal mode, and electron identification remain open; Sec.~\ref{sec:chargedcandidate} states the required construction.
+
+\section{Local Transverse Frames and a Compact Rollout Connection}
+
+\subsection{Frame comparison and curvature}
+
+Choose an oriented transverse basis $\mathcal F_v=(\bm e_{1,v},\bm e_{2,v})$ at each local rollout neighborhood. Independent basis rotations $\chi_v\in\mathbb R/2\pi\mathbb Z$ leave its physical relational state unchanged. Adopting $SO(2)\simeq U(1)$ as the comparison group, an oriented edge $e=(v\to w)$ carries
+\begin{equation}
+\begin{aligned}
+U_e&=e^{-ia_e},\qquad a_e\in\mathbb R/2\pi\mathbb Z,\\
+a&\mapsto a+d_0\chi\pmod{2\pi}.
+\end{aligned}
+\end{equation}
+Compactness follows from this group choice, rather than its universal cover $\mathbb R$.
+
+For plaquette incidence signs $\sigma_{pe}$, the Abelian loop product is
+\begin{equation}
+\begin{aligned}
+W_p&=\prod_{e\in\partial p}U_e^{\sigma_{pe}}=e^{-i\Phi_p},\\
+\Phi_p&=(d_1a)_p\pmod{2\pi}.
+\end{aligned}
+\end{equation}
+The exact cochain identities
+\begin{equation}
+d_1d_0=0,\qquad d_2d_1=0
+\end{equation}
+make plaquette curvature gauge invariant and supply the geometric identities in the smooth-field calculation below. A smooth lift is used for fluctuation expansions; global holonomy is distinguished from local curvature in Sec.~\ref{sec:reference}.
+
+\subsection{Allowed charge representations}
+\label{sec:representations}
+
+The one-dimensional irreducible representations are $\chi_n(\theta)=e^{in\theta}$ with $n\in\mathbb Z$. A hypothetical field carrying label $n$ transforms as $\psi_v\mapsto e^{in\chi_v}\psi_v$, with covariant difference
+\begin{equation}
+(D_a\psi)_{vw}=U_{vw}^{\,n}\psi_w-\psi_v.
+\end{equation}
+These are allowed transformation laws, not a populated matter spectrum. Compactness guarantees neither an $n=+1$ nor an $n=-1$ finite-energy, stable, gapped excitation, and supplies neither a measured charge unit nor fermionic statistics. Here $|n|=1$ denotes the smallest nonzero absolute representation label in the chosen normalization, not a proved minimum charge in the realized spectrum. A covariant coupling describes an assumed object; it does not establish its existence.
+
+\section{Compact Rollout Hamiltonian and the Gauss Constraint}
+
+\subsection{Periodic holonomy energy and an admissible reference connection}
+\label{sec:reference}
+
+Gauge invariance forbids a local energy term that depends on an isolated link angle through, for example, $m_A^2a_e^2$. Local spatial energy must instead depend on gauge-invariant closed-loop information. At the shortest scale this is the plaquette holonomy, so a local single-plaquette contribution may be written
+\begin{equation}
+V_p(\Phi_p),
+\end{equation}
+with compact periodicity
+\begin{equation}
+\boxed{
+V_p(\Phi+2\pi)=V_p(\Phi).
+}
+\end{equation}
+A Fourier representation is
+\begin{equation}
+V_p(\Phi)
+=
+c_0
++
+\sum_{m\ge1}
+\left[
+c_m\cos(m\Phi)
++
+s_m\sin(m\Phi)
+\right].
+\end{equation}
+We do not impose microscopic parity symmetry at this stage because the primitive TEF helix is chiral.
+
+The expansion must be taken around an \emph{admissible stationary reference connection} on the already-realized rollout complex, not around independently selected minima on unrelated plaquettes. Let
+\begin{equation}
+a=a^{(0)}+\delta a,
+\qquad
+\Phi^{(0)}=d_1a^{(0)},
+\qquad
+\delta\Phi=d_1\delta a.
+\end{equation}
+For the present classical Maxwell-compatibility analysis we restrict to a smooth, defect-free, locally flat electromagnetic reference sector,
+\begin{equation}
+\boxed{
+\Phi^{(0)}=0.
+}
+\end{equation}
+This condition specifies zero plaquette curvature in the chosen smooth lift. The local expansion is performed on a contractible patch of the realized complex and its corresponding smooth effective region; it does not assert that the entire complex is contractible. With the link convention above, the holonomy around a closed path is
+\begin{equation}
+W_\gamma[a^{(0)}]=\exp\!\left(-i\sum_{e\in\gamma}s_{\gamma e}a_e^{(0)}\right).
+\end{equation}
+Local flatness gives trivial holonomy around contractible loops but does not impose $W_\gamma=1$ on noncontractible cycles of the full complex. Imposing that stronger global condition would be an additional assumption, which is not made here. Global holonomy is left unanalyzed, not declared absent. This is not an empty spacetime background: the source-local multi-helix rollout ensemble is already realized. Only its local electromagnetic reference curvature is set to zero. The local-domain and boundary-variation restrictions used later for the constant topological term apply to the same analysis.
+
+Stability alone does not guarantee a quadratic leading term. We therefore impose the explicit low-energy condition that the physical curvature sector have a nondegenerate positive second variation at the reference connection:
+\begin{equation}
+\boxed{
+\mathcal K>0
+}
+\end{equation}
+on the relevant curvature subspace. Here $V$ includes all retained finite-range local loop interactions, not only independent single-plaquette potentials, and $\mathcal K$ is their full curvature Hessian at $\Pi=0$. Thus
+\begin{equation}
+V[\delta\Phi]
+=
+V[0]
++
+\frac12\langle\delta\Phi,\mathcal K\,\delta\Phi\rangle
++
+O(\delta\Phi^3).
+\end{equation}
+A smooth periodic potential whose second variation vanishes is therefore outside the Maxwell-compatible quadratic sector considered here. The familiar Wilson/rotor choice $1-\cos\Phi$ is one representative, not a TEF postulate.
+
+\subsection{Canonical flux sector and the general quadratic Hessian}
+
+Promote the compact link angle $a_e$ to a dynamical coordinate and denote its canonical conjugate by $\Pi_e$. We take the unexcited canonical-flux reference state to be
+\begin{equation}
+\Pi^{(0)}=0,
+\end{equation}
+and require a nondegenerate positive quadratic response in the physical flux directions. Within the retained variables $(\Pi,\delta\Phi)$ and the selected smooth local sector, the full quadratic Hessian of the assumed finite-range Hamiltonian has the block form
+\begin{equation}
+\boxed{
+H_{\rm roll}^{(2)}
+=
+\frac12\langle\Pi,\mathcal U\Pi\rangle
++
+\langle\Pi,\mathcal C\,\delta\Phi\rangle
++
+\frac12\langle\delta\Phi,\mathcal K\,\delta\Phi\rangle,
+}
+\end{equation}
+where $\mathcal U>0$ and $\mathcal C$ maps curvature variables into the canonical-flux space. Positivity of the full physical quadratic Hessian requires, in particular, the Schur complement
+\begin{equation}
+\boxed{
+\mathcal K_{\rm eff}
+=
+\mathcal K
+-
+\mathcal C^\dagger\mathcal U^{-1}\mathcal C
+>0.
+}
+\end{equation}
+The operators $\mathcal U$, $\mathcal C$, and $\mathcal K$ include all quadratic contributions of the retained finite-range local interactions and may couple distinct nearby cells. ``General'' refers to this Hessian in the selected variables and sector, not to every possible TEF degree of freedom. Their entries are effective data; no microscopic calculation of them is claimed.
+
+A longer local loop is not automatically higher order. If a contractible loop $\gamma$ bounds a finite cell surface, its small holonomy is $\delta\Phi_\gamma=b_\gamma\delta\Phi$, where $b_\gamma$ is the oriented plaquette sum. For example,
+\begin{equation}
+\begin{aligned}
+V_\gamma&=\kappa_\gamma[1-\cos(b_\gamma\delta\Phi)],\\
+V_\gamma^{(2)}&=\frac{\kappa_\gamma}{2}(b_\gamma\delta\Phi)^2,
+\qquad
+\Delta\mathcal K=\kappa_\gamma b_\gamma^\dagger b_\gamma.
+\end{aligned}
+\end{equation}
+For two adjacent plaquettes this contains $(\kappa_\gamma/2)(\delta\Phi_1+\delta\Phi_2)^2$, including an off-diagonal quadratic coupling. Such terms can change the leading curvature-squared coefficient in a slowly varying field. Pure spatial loop potentials contribute to $\mathcal K$; interactions also involving canonical flux can contribute to $\mathcal U$ and $\mathcal C$.
+
+At this stage $H_{\rm higher}$ denotes terms beyond quadratic order in fluctuation amplitude. Quadratic spatial-dispersion effects remain in the finite-range Hessian kernels. A later long-wave derivative truncation is a separate approximation, requiring wavelengths large compared with the retained interaction range; any derivative remainder is separated only then. It is not counted a second time in $H_{\rm higher}$. Nontrivial global sectors and compact defects are outside the selected analysis, rather than being assumed small higher-order corrections.
+
+The mixing operator $\mathcal C$ is retained because locality, compactness, and gauge invariance do not by themselves force a block-diagonal Hessian. In an isotropic three-dimensional continuum its parity-odd scalar component becomes an $\mathbf E\!\cdot\!\mathbf B$-type response. A constant coefficient is topological in a smooth boundary-free bulk and does not change the local Maxwell equations; more general anisotropic or position-dependent mixing would represent a measurable departure from the minimal Maxwell sector.
+
+\subsection{Temporal connection, prescribed sources, and the Gauss generator}
+
+For the field-sector derivation in this paper, $\rho_{\rm d}$ and $j_{\rm d}$ are first treated as prescribed external sources constrained to be compatible with the gauge symmetry. Dynamical charged matter is introduced separately when the Lorentz-force response is tested. Subscript $\mathrm d$ distinguishes the discrete source cochains from the physical continuum densities $\rho,\mathbf j$. We use a dimensionful action: $a_e$ is dimensionless, $a_0$ has units of inverse time, $\Pi$ and $\rho_{\rm d}$ have units of action, and $j_{\rm d}$ has units of energy. Geometric quadrature weights are carried by the cochain pairings and response operators; physical units are fixed explicitly below.
+
+Introduce a temporal connection
+\begin{equation}
+a_0\in C^0
+\end{equation}
+and the gauge-invariant temporal rate
+\begin{equation}
+\boxed{
+\Xi
+=
+\dot a-d_0a_0.
+}
+\end{equation}
+The first-order action is
+\begin{equation}
+L
+=
+\langle\Pi,\Xi\rangle
+-
+H_{\rm roll}
++
+\langle\rho_{\rm d},a_0\rangle
++
+\langle j_{\rm d},a\rangle.
+\end{equation}
+Varying $a_0$ gives
+\begin{equation}
+-\,d_0^\dagger\Pi+\rho_{\rm d}=0,
+\end{equation}
+hence the discrete Gauss constraint
+\begin{equation}
+\boxed{
+d_0^\dagger\Pi=\rho_{\rm d}.
+}
+\end{equation}
+Equivalently,
+\begin{equation}
+G_v=(d_0^\dagger\Pi)_v-\rho_{{\rm d},v},
+\end{equation}
+with physical configurations satisfying $G_v=0$.
+
+The important logical point is that Gauss law is already present in the compact discrete theory; it is not inserted only after taking a continuum limit.
+
+\subsection{Continuity of prescribed sources}
+
+Under
+\begin{equation}
+a\rightarrow a+d_0\chi,
+\qquad
+a_0\rightarrow a_0+\dot\chi,
+\end{equation}
+the prescribed-source contribution changes, up to endpoint terms, by
+\begin{equation}
+\delta S_{\rm src}
+=
+-\int dt\,
+\langle
+\dot\rho_{\rm d}-d_0^\dagger j_{\rm d},
+\chi
+\rangle.
+\end{equation}
+Gauge compatibility therefore requires
+\begin{equation}
+\boxed{
+\dot\rho_{\rm d}-d_0^\dagger j_{\rm d}=0.
+}
+\end{equation}
+With the continuum sign convention fixed below, this becomes the standard continuity equation $\partial_t\rho+\nabla\!\cdot\!\mathbf j=0$.
+
+\section{Low-Curvature Expansion and a Conditional Maxwell Continuum Description}
+
+\subsection{Eliminating the canonical flux}
+
+At quadratic order, with $\Phi$ now denoting the curvature fluctuation $\delta\Phi$ about the admissible reference connection,
+\begin{equation}
+\begin{aligned}
+L^{(2)}={}&\langle\Pi,\Xi\rangle
+-\tfrac12\langle\Pi,\mathcal U\Pi\rangle\\
+&-\langle\Pi,\mathcal C\Phi\rangle
+-\tfrac12\langle\Phi,\mathcal K\Phi\rangle\\
+&+L_{\rm source}.
+\end{aligned}
+\end{equation}
+Variation with respect to $\Pi$ gives
+\begin{equation}
+\Xi
+=
+\mathcal U\Pi+\mathcal C\Phi,
+\end{equation}
+so
+\begin{equation}
+\boxed{
+\Pi
+=
+\mathcal U^{-1}(\Xi-\mathcal C\Phi).
+}
+\end{equation}
+Eliminating the canonical flux gives
+\begin{equation}
+\boxed{
+\begin{aligned}
+L_{\rm eff}^{(2)}={}&\tfrac12\langle\Xi-\mathcal C\Phi,\\
+&\quad\mathcal U^{-1}(\Xi-\mathcal C\Phi)\rangle\\
+&-\tfrac12\langle\Phi,\mathcal K\Phi\rangle
++L_{\rm source}.
+\end{aligned}
+}
+\end{equation}
+Equivalently,
+\begin{equation}
+\begin{aligned}
+L_{\rm eff}^{(2)}={}&\tfrac12\langle\Xi,\mathcal U^{-1}\Xi\rangle\\
+&-\langle\Xi,\mathcal U^{-1}\mathcal C\Phi\rangle\\
+&-\tfrac12\langle\Phi,\mathcal K_{\rm eff}\Phi\rangle
++L_{\rm source},
+\end{aligned}
+\end{equation}
+with
+\begin{equation}
+\mathcal K_{\rm eff}
+=
+\mathcal K
+-
+\mathcal C^\dagger\mathcal U^{-1}\mathcal C.
+\end{equation}
+Thus the earlier block-diagonal TEF action is recovered when $\mathcal C=0$. More generally, it has electric, magnetic, and mixed quadratic response blocks. Their reduction to local Maxwell coefficients requires the continuum and constitutive assumptions below; the operator form alone does not establish that reduction.
+
+\subsection{Discrete equations}
+
+Define the canonical electric-like flux and magnetic-like response by
+\begin{equation}
+\boxed{
+\mathcal D\equiv\Pi,
+\qquad
+\mathcal H\equiv
+\mathcal C^\dagger\Pi+\mathcal K\Phi.
+}
+\end{equation}
+Variation with respect to $a$ gives
+\begin{equation}
+\boxed{
+\dot{\mathcal D}+d_1^\dagger\mathcal H=j_{\rm d}.
+}
+\end{equation}
+Together with
+\begin{equation}
+\boxed{
+d_0^\dagger\mathcal D=\rho_{\rm d},
+}
+\end{equation}
+and the exact identities
+\begin{equation}
+\boxed{
+\dot\Phi-d_1\Xi=0,
+}
+\end{equation}
+\begin{equation}
+\boxed{
+d_2\Phi=0,
+}
+\end{equation}
+the compact rollout theory supplies the discrete Maxwell-like quartet. Applying $d_0^\dagger$ to the spatial dynamical equation and using $d_0^\dagger d_1^\dagger=0$ gives again
+\begin{equation}
+\dot\rho_{\rm d}-d_0^\dagger j_{\rm d}=0.
+\end{equation}
+
+\subsection{Classical regime restriction: smooth, weak-curvature fluctuations}
+\label{sec:classicalregime}
+
+The calculation selects small classical fluctuations around the admissible reference connection, with a smooth lift and no compact defects in the region being studied. It assumes that the evolution remains within this regime over the spatial and temporal scales used in the effective description. This is a restriction of applicability, not a proof that the full nonlinear dynamics preserves an invariant defect-free sector. Positive quadratic response supports the linearized stability analysis but does not control finite-amplitude defect creation or long-time escape from the chosen regime.
+
+No quantum state, statistical ensemble, or thermodynamic limit is specified here. Accordingly, the paper does not define or establish a quantum or statistical deconfined/Coulomb phase. Compact lattice gauge theory provides a warning that a smooth quadratic expansion alone does not determine the behavior of a completed model \cite{kogut1979}; its phase results are not imported as a TEF phase theorem. Defects are excluded from the present configurations and evolution under study, not shown to have small statistical weight, a controlled nucleation rate, or suppressed proliferation.
+
+The transverse wave dispersion derived below is a property of the assumed effective continuum equations within their range of validity. Whether rollout microdynamics realizes and sustains this classical regime, and whether a specified statistical or quantum completion has a Coulomb phase, are separate open questions.
+
+\subsection{Discrete-to-continuum normalization and signs}
+\label{sec:normalizationmap}
+
+A compact edge angle is not dimensionally identical to a physical vector potential. Introduce a positive conversion factor $\gamma_A$ with units of charge/action. For a fixed effective complex, assume a compatible smooth continuum representative and adopt the local interpolation convention
+\begin{equation}
+\boxed{
+\begin{aligned}
+a_e&=\gamma_A\int_e\mathbf A\cdot d\boldsymbol\ell
+\pmod{2\pi},\\
+a_{0,v}&=-\gamma_A\phi(\mathbf x_v).
+\end{aligned}
+}
+\end{equation}
+Here the edge and its length belong to the already-realized effective rollout geometry, not to a pre-existing spatial lattice. In a smooth lift, Stokes' theorem and the definition of $\Xi$ give
+\begin{equation}
+\Xi_e=-\gamma_A\int_e\mathbf E\cdot d\boldsymbol\ell,
+\qquad
+\Phi_p=\gamma_A\int_p\mathbf B\cdot d\mathbf S,
+\end{equation}
+where $\mathbf E=-\partial_t\mathbf A-\nabla\phi$ and $\mathbf B=\nabla\times\mathbf A$. For a short edge of effective length $\ell_*$, $a_e\simeq\gamma_A\ell_* A_\parallel$; $\ell_*$ is a coarse-graining scale, not an extra primitive helix parameter.
+
+The source and response maps are the duals of this interpolation, fixed by the physical source pairing and the variation of the field action:
+\begin{align}
+\langle\rho_{\rm d},a_0\rangle+\langle j_{\rm d},a\rangle
+&\longrightarrow\int d^3x\,(\mathbf j\cdot\mathbf A-\rho\phi),\\
+\begin{split}
+\langle\Pi,\delta\Xi\rangle-\langle\mathcal H,\delta\Phi\rangle
+&\longrightarrow\int d^3x\,\bigl(
+\mathbf D_{\rm full}\cdot\delta\mathbf E\\
+&\hspace{4.2em}-\mathbf H_{\rm full}\cdot\delta\mathbf B\bigr).
+\end{split}
+\end{align}
+These relations absorb the appropriate primal/dual cell weights. For example, in a local uniform cubic discretization with unweighted component sums, the leading component correspondences are
+\begin{equation}
+\begin{array}{c|c}
+\text{discrete variable} & \text{continuum field}\\
+\hline
+a_e & \gamma_A\ell_* A_\parallel\\
+a_{0,v} & -\gamma_A\phi\\
+\Xi_e & -\gamma_A\ell_* E_\parallel\\
+\Phi_p & \gamma_A\ell_*^2 B_\perp\\
+\Pi_e & -\ell_*^2 D_{{\rm full},\parallel}/\gamma_A\\
+\mathcal H_p & \ell_* H_{{\rm full},\perp}/\gamma_A\\
+\rho_{{\rm d},v} & \ell_*^3\rho/\gamma_A\\
+j_{{\rm d},e} & \ell_*^2 j_\parallel/\gamma_A
+\end{array}
+\end{equation}
+This table illustrates the units and signs; it does not assume that microscopic rollout adjacency is cubic. On the weighted complex the dual pairings, rather than these particular powers of a uniform edge length, define the correspondence. After interpolation and these normalizations, the incidence/adjoint sign conventions are
+\begin{equation}
+d_0\rightsquigarrow\nabla,\quad
+d_0^\dagger\rightsquigarrow-\nabla\!\cdot,\quad
+d_1\rightsquigarrow\nabla\!\times,\quad
+d_1^\dagger\rightsquigarrow\nabla\!\times.
+\end{equation}
+The symbols $\rightsquigarrow$ denote the assumed normalized continuum correspondences, not an equality of matrices with differential operators or a proved operator limit. Given smooth fields, edge and face integration and Stokes' theorem provide a compatible sampling of the exterior-derivative identities. This does not prove the converse: the present sampling identities do not establish convergence of reconstructed discrete dynamical solutions. In particular, adjoints depend on the chosen weighted inner products; their continuum identification requires metric and pairing assumptions in addition to $d^2=0$.
+
+This paper establishes no sequence of weighted complexes, reconstruction-error estimate, uniform stability bound, or convergence of the discrete operators or their solutions. The dual pairing arrows are effective matching requirements. Local constant response after eliminating $\Pi$ is also an assumption: finite-range $\mathcal U$ does not by itself make $\mathcal U^{-1}$ local. The long-wave constitutive truncation below assumes a regular leading response on the relevant scales. The present result is a formal consistency check under these interpolation and response assumptions, not microscopic homogenization or a continuum convergence theorem.
+
+Under these assumed interpolation and dual-response correspondences, the continuum representatives of the discrete equations are
+\begin{equation}
+\nabla\cdot\mathbf D_{\rm full}=\rho,\qquad
+\nabla\times\mathbf H_{\rm full}-\partial_t\mathbf D_{\rm full}=\mathbf j,
+\end{equation}
+together with Faraday's law and $\nabla\cdot\mathbf B=0$ in the smooth sector. The continuity equation is $\partial_t\rho+\nabla\cdot\mathbf j=0$.
+
+For comparison with the later charge/action normalization we choose
+\begin{equation}
+\gamma_A=\frac{e_*}{J_0},\qquad Q=n e_*.
+\end{equation}
+Indeed $\chi=\gamma_A\Lambda$ maps $a\mapsto a+d_0\chi$ to $\mathbf A\mapsto\mathbf A+\nabla\Lambda$, $\phi\mapsto\phi-\partial_t\Lambda$, while $\psi\mapsto e^{in\chi}\psi=e^{iQ\Lambda/J_0}\psi$. This is a consistent normalization convention conditional on an action scale $J_0$, not a derivation of $J_0=\hbar$, quantum dynamics, or the measured $e_*$. Here $e_*$ is the charge scale assigned to a unit representation label, not a proved smallest charge in an actual spectrum; neither $n=+1$ nor $n=-1$ is guaranteed to be realized. The angle retains its $2\pi$ period and $n$ remains an integer; neither is rescaled into a continuous representation label. The physical charge scale and electromagnetic impedance must still be fixed by microscopic matching.
+
+\subsection{Homogeneous isotropic Maxwell sector}
+
+The general quadratic response need not be exactly Maxwellian. The classical compatibility calculation additionally assumes a homogeneous/isotropic leading long-wave response in which the parity-even constitutive response reduces to scalars and the mixed operator $\mathcal C$ either vanishes or reduces to a constant isotropic pseudoscalar/topological contribution that does not alter local bulk equations.
+
+After the interpolation and action-density normalization of Sec.~\ref{sec:normalizationmap}, the electric and magnetic quadratic coefficients are denoted by $\varepsilon_*>0$ and $\mu_*^{-1}>0$. They include the conversion and cell-volume factors; they are not raw entries of $\mathcal U^{-1}$ and $\mathcal K_{\rm eff}$. Retaining a constant isotropic mixed contribution, write the full field Lagrangian density as
+\begin{equation}
+\mathcal L_{\rm field}
+=\frac{\varepsilon_*}{2}E^2-\frac{B^2}{2\mu_*}
++\kappa_\theta\mathbf E\cdot\mathbf B.
+\end{equation}
+The full variational responses, which are the variables in the preceding discrete--continuum map, are
+\begin{equation}
+\boxed{
+\mathbf D_{\rm full}=\varepsilon_*\mathbf E+\kappa_\theta\mathbf B,
+\qquad
+\mathbf H_{\rm full}=\frac{\mathbf B}{\mu_*}-\kappa_\theta\mathbf E.
+}
+\end{equation}
+Thus a constant topological term changes the canonical/constitutive definitions even though it does not change local bulk equations. For $\kappa_\theta$ constant in space and time, the extra Gauss term is $\kappa_\theta\nabla\cdot\mathbf B=0$, and the extra Amp\`ere term is
+\begin{equation}
+-\kappa_\theta(\nabla\times\mathbf E+\partial_t\mathbf B)=0.
+\end{equation}
+We now explicitly separate this constant bulk contribution and define the parity-even representatives used in all subsequent Maxwell, energy, and momentum formulas:
+\begin{equation}
+\boxed{
+\begin{aligned}
+\mathbf D&\equiv\mathbf D_{\rm full}-\kappa_\theta\mathbf B
+=\varepsilon_*\mathbf E,\\
+\mathbf H&\equiv\mathbf H_{\rm full}+\kappa_\theta\mathbf E
+=\frac{\mathbf B}{\mu_*}.
+\end{aligned}
+}
+\end{equation}
+For nonzero mixing, the original discrete $\Pi$ continues to map to the negative \emph{full} displacement with the factors in Sec.~\ref{sec:normalizationmap}; it must not be silently identified with the parity-even $-\mathbf D$. The bulk equations can nevertheless be written using $\mathbf D,\mathbf H$ because the extra terms cancel as above. For the action-level separation we work on the contractible effective spacetime region associated with the local patch, with boundary terms absent or fixed so that they do not enter the variation. This is not a condition of trivial topology or holonomy on the entire rollout ensemble. The cancellation in the local equations uses constant $\kappa_\theta$ and the Bianchi identities; dropping the action boundary contribution requires the additional variation conditions just stated. No boundary, global-sector, or defect response is claimed. Under these interpolation, constitutive, and local-variation conditions the representative continuum equations become
+\begin{equation}
+\boxed{
+\nabla\cdot(\varepsilon_*\mathbf E)=\rho,
+}
+\end{equation}
+\begin{equation}
+\boxed{
+\nabla\times
+\left(
+\frac{\mathbf B}{\mu_*}
+\right)
+-
+\varepsilon_*\partial_t\mathbf E
+=
+\mathbf j,
+}
+\end{equation}
+\begin{equation}
+\boxed{
+\nabla\times\mathbf E+\partial_t\mathbf B=0,
+}
+\end{equation}
+and
+\begin{equation}
+\boxed{
+\nabla\cdot\mathbf B=0.
+}
+\end{equation}
+These are the Maxwell equations for constant homogeneous constitutive coefficients \cite{jackson1999}. The last equation is asserted here in the smooth defect-free connection sector; nontrivial compact sectors are discussed separately as future work.
+
+\subsection{Characteristic speed and product--ratio separation}
+
+In the source-free homogeneous Maxwell sector, the field equations imply
+\begin{equation}
+\nabla^2\mathbf E
+-
+\varepsilon_*\mu_*\partial_t^2\mathbf E
+=0,
+\end{equation}
+and similarly for $\mathbf B$. Hence
+\begin{equation}
+\boxed{
+c_{\rm EM}
+=
+\frac{1}{\sqrt{\varepsilon_*\mu_*}}.
+}
+\end{equation}
+TEF treats $c$ as primitive or near-primitive, so classical compatibility requires
+\begin{equation}
+\boxed{
+\varepsilon_*\mu_*=c^{-2}.
+}
+\end{equation}
+
+In the block-diagonal scalar representative, where $\mathcal C=0$, let $\mathcal U_E$ and $\mathcal K_B$ denote the continuum-normalized stiffnesses, including the cell and $\gamma_A$ factors of Sec.~\ref{sec:normalizationmap}. Then
+\begin{equation}
+\varepsilon_*=\mathcal U_E^{-1},
+\qquad
+\mu_*^{-1}=\mathcal K_B,
+\end{equation}
+so
+\begin{equation}
+\boxed{
+c_{\rm EM}^2
+=
+\mathcal U_E\mathcal K_B,
+}
+\end{equation}
+while the impedance is
+\begin{equation}
+\boxed{
+Z_*
+=
+\sqrt{\frac{\mu_*}{\varepsilon_*}}
+=
+\sqrt{\frac{\mathcal U_E}{\mathcal K_B}}.
+}
+\end{equation}
+Thus the product of the electric-flux and holonomy stiffness scales controls propagation, while their ratio controls the remaining field/source normalization. This product--ratio separation is also visible in explicit emergent compact-$U(1)$ rotor models \cite{levinwen2006}.
+
+\subsection{Low-energy Lorentz form and the chiral cross sector}
+
+When $\varepsilon_*\mu_*=c^{-2}$, the parity-even Maxwell Lagrangian is
+\begin{equation}
+\mathcal L_{\rm EM}
+=
+\frac{\varepsilon_*}{2}
+\left(E^2-c^2B^2\right),
+\end{equation}
+which can be written, after normalization of the four-potential, as
+\begin{equation}
+\mathcal L_{\rm EM}
+=
+-\frac{K_*}{4}
+F_{\mu\nu}F^{\mu\nu}.
+\end{equation}
+The long-wavelength parity-even sector is therefore compatible with local Lorentz-covariant Maxwell dynamics. This does not prove microscopic Lorentz invariance of the rollout ensemble.
+
+The mixed quadratic operator $\mathcal C$ supplies the natural place for a parity-odd response. In a homogeneous isotropic continuum its scalar pseudoscalar component has the form
+\begin{equation}
+\mathcal L_\theta
+=
+\kappa_\theta\,\mathbf E\cdot\mathbf B.
+\end{equation}
+For constant $\kappa_\theta$, the Bianchi identities make its contribution to the smooth local bulk equations vanish. On the contractible analysis region it can also be written as an $F_{\mu\nu}\widetilde F^{\mu\nu}$ total derivative and separated from the action variation under the stated boundary conditions. Space--time variation, anisotropic mixing, boundaries, defects, or nontrivial topology can require additional magnetoelectric or global analysis and are not included in the minimal Maxwell-compatible sector tested here. Local flatness alone does not exclude global holonomy.
+
+\section{Collective Electromagnetic Waves}
+
+All propagation statements here concern the homogeneous effective continuum model obtained under Sec.~\ref{sec:normalizationmap}'s interpolation assumptions. A collective phase $\Theta_{\rm EM}=\bm k\cdot\bm x-\omega t+\Theta_0$ is distinct from the primitive helix phase $\phi$: fixed helix geometry does not fix electromagnetic frequency. With $\nu=\omega/(2\pi)$ and $\lambda=2\pi/|\bm k|$, frequency and wavelength describe collective temporal and spatial variation, not the primitive pitch, radius, or winding rate.
+
+For a source-free plane wave $\bm E=\bm E_0e^{i(\bm k\cdot\bm x-\omega t)}$, the Maxwell representative equations give
+\begin{equation}
+\begin{gathered}
+\bm k\cdot\bm E_0=\bm k\cdot\bm B_0=0,\\
+\bm B_0=\frac{\bm k\times\bm E_0}{\omega},\qquad
+\omega^2=c^2k^2.
+\end{gathered}
+\end{equation}
+Thus each nonzero wavevector has two transverse polarizations and $\nu\lambda=c$. Finite pulses are Fourier superpositions of transverse modes, with the usual bandwidth associated with localization. In this nondispersive model, phase and group velocities equal $c$.
+
+Plane waves are local or ideal unbounded-domain representatives. The formal $k\to0$ dispersion describes this continuum wave model; no uniform validity at arbitrarily large wavelengths, global boundary spectrum, or gapless microscopic spectrum is proved. Relating a source's internal energy difference to a radiation frequency requires additional dynamics and an action-scale matching law, beyond the classical calculation here.
+
+\section{Static Response, Moving Charges, Lorentz Force, Energy Transport, and Radiation}
+
+\subsection{Static electric response}
+
+For the field produced by a static source in the homogeneous effective medium,
+\begin{equation}
+\bm E_{\rm src}=-\nabla\phi_{\rm src},
+\end{equation}
+and Gauss law gives
+\begin{equation}
+-\varepsilon_*\nabla^2\phi_{\rm src}=\rho_{\rm src}.
+\end{equation}
+
+For an isolated point source, take the ideal unbounded, homogeneous effective three-dimensional continuum and select the free-space solution with $\phi_{\rm src}\to0$ at infinity. With
+\begin{equation}
+\rho_{\rm src}
+=
+Q\delta^{(3)}(\bm r),
+\end{equation}
+the effective three-dimensional Green function gives
+\begin{equation}
+\boxed{
+\phi_{\rm src}(r)
+=
+\frac{Q}{4\pi\varepsilon_*r},
+}
+\end{equation}
+and
+\begin{equation}
+\boxed{
+\bm E_{\rm src}(r)
+=
+\frac{Q}{4\pi\varepsilon_*r^2}
+\hat{\bm r}.
+}
+\end{equation}
+
+These formulas give this source's selected free-space field for $r>0$ and do not assign a finite point-charge self-energy. On a bounded local region or in the presence of external fields, the solution can include a harmonic contribution fixed by boundary data and fields from other sources; the displayed $1/r$ term alone is then not the total potential. The ideal free-space Green function is an effective comparison on scales where the assumed smooth continuum description applies, not an assertion of globally unbounded rollout geometry. For a resolved envelope the corresponding Coulomb form is its leading far-field monopole response. This is consistent with the inverse-distance Green scaling obtained conditionally in Paper VIII \cite{wu2026geometry}.
+
+\subsection{Moving sources}
+
+For a rigidly convected charge profile with no additional internal current,
+\begin{equation}
+\bm j_{\rm conv}
+=
+\rho\bm v.
+\end{equation}
+
+More generally,
+\begin{equation}
+\boxed{
+\bm j
+=
+\rho\bm v
++
+\bm j_{\rm internal},
+}
+\end{equation}
+where a divergence-free internal current is not excluded. This distinction is important for future electron magnetic-moment physics.
+
+For the fields generated by this same rigidly translating source at constant $\bm v$, in the low-velocity, quasi-static, purely convective limit and with no independent homogeneous field contribution, the Maxwell-compatible equations give
+\begin{equation}
+\boxed{
+\bm B_{\rm src}
+\simeq
+\frac{1}{c^2}
+\bm v\times\bm E_{\rm src}.
+}
+\end{equation}
+This relation applies to the source-generated fields only. Independent applied fields, boundary responses, or additional sources contribute separately to the total $\bm E$ and $\bm B$ and need not obey this relation.
+
+
+\subsection{Leading monopole coupling and the external Lorentz force}
+
+Up to this point, $\rho$ and $\mathbf j$ are prescribed conserved physical sources. To test reciprocal matter response we replace the source of the selected excitation by its dynamical envelope contribution, rather than adding that contribution a second time. The field variations of the same source functional give its charge/current, and the envelope variation tests its electromagnetic force. This assumes a suitable charged envelope; neither a prescribed source nor a minimally coupled trajectory proves the existence of a TEF resonance.
+
+This test requires an additional matter-coupling approximation. Let $r_{\rm env}$ be the envelope size and $L_{\rm ext}$ the shortest spatial variation scale of the external field. We assume $r_{\rm env}/L_{\rm ext}\ll1$, temporal driving slow compared with relevant internal excitation rates, and sufficiently weak driving that the internal sector remains unchanged. We retain only electric-monopole minimal coupling. Gauge invariance permits nonminimal terms involving electric or magnetic moments, polarizabilities, and higher multipoles; it does not set their coefficients to zero. Slow spatial variation controls a size expansion but alone does not suppress every permanent moment or internal torque. Neglect of those responses is an explicit condition of the present translational-force test, not a derivation of the electron's complete interaction.
+
+For a constant charge $Q$, the leading convective sources are
+\begin{equation}
+\begin{aligned}
+\rho(\mathbf x,t)&\simeq Q\delta^{(3)}(\mathbf x-\mathbf X(t)),\\
+\mathbf j(\mathbf x,t)&\simeq Q\dot{\mathbf X}\delta^{(3)}(\mathbf x-\mathbf X(t)).
+\end{aligned}
+\end{equation}
+The delta functions denote a distributional approximation when integrated against smooth external fields, not a resolved microscopic charge profile. The monopole source functional is
+\begin{equation}
+L_{\rm int}[\mathbf A,\phi;\mathbf X]
+=Q\dot{\mathbf X}\cdot\mathbf A(\mathbf X,t)-Q\phi(\mathbf X,t),
+\end{equation}
+so $\delta L_{\rm int}/\delta\mathbf A=\mathbf j$ and $-\delta L_{\rm int}/\delta\phi=\rho$. In the external-field equation of motion below this functional is evaluated on $\mathbf A_{\rm ext},\phi_{\rm ext}$, generated independently of the envelope's own singular self-field. A dynamical field--source action may instead be varied first for a smooth, finite source; taking its self-consistent point limit requires an additional self-field prescription that is not supplied here.
+
+Let $L_{\rm mech}(\mathbf X,\dot{\mathbf X},t)$ be the mechanical/envelope Lagrangian, independent of the electromagnetic potentials in this split, and define
+\begin{equation}
+\mathbf p_{\rm mech}=\frac{\partial L_{\rm mech}}{\partial\dot{\mathbf X}},
+\qquad
+\mathbf F_{\rm mech}^{\text{(non-EM)}}
+\equiv\frac{\partial L_{\rm mech}}{\partial\mathbf X}.
+\end{equation}
+For example, a term $-V(\mathbf X,t)$ contributes $-\nabla V$. With $\mathbf v=\dot{\mathbf X}$, the component Euler--Lagrange equation is
+\begin{equation}
+\begin{aligned}
+\frac{d}{dt}(p_{{\rm mech},i}+Q A_{{\rm ext},i})
+={}&\frac{\partial L_{\rm mech}}{\partial X_i}\\
+&+Qv_j\partial_i A_{{\rm ext},j}-Q\partial_i\phi_{\rm ext}.
+\end{aligned}
+\end{equation}
+Expanding the total derivative of $\mathbf A_{\rm ext}(\mathbf X(t),t)$ gives
+\begin{equation}
+\boxed{
+\frac{d\mathbf p_{\rm mech}}{dt}
+=\mathbf F_{\rm mech}^{\text{(non-EM)}}
++Q(\mathbf E_{\rm ext}+\mathbf v\times\mathbf B_{\rm ext}).
+}
+\end{equation}
+The pure Lorentz-force equation follows when $\partial L_{\rm mech}/\partial\mathbf X=0$ and no further non-Lagrangian forces are applied. Explicit time dependence alone does not add a term to this momentum equation, although it can affect mechanical energy balance. No particular velocity dependence of $L_{\rm mech}$, and hence no full relativistic matter dispersion, has been derived by this argument.
+
+For a resolved minimally coupled current distribution in smooth external fields, the corresponding local force density is
+\begin{equation}
+\mathbf f_{\rm ext}=\rho\mathbf E_{\rm ext}
++\mathbf j\times\mathbf B_{\rm ext}.
+\end{equation}
+Its integral reduces to the monopole force under the stated approximations. Resolved internal currents can contribute magnetic forces and torques, but their constitutive dynamics and additional effective couplings are not determined here. The external-field result excludes self-force, radiation reaction, the point-source self-energy, and the adjustment of internal excitation energy by self-fields. These are already issues of classical electrodynamics; deferring them is separate from deferring QED.
+
+\subsection{Field momentum and Maxwell stress}
+
+This subsection uses the parity-even homogeneous Maxwell representative defined above, with constant $\varepsilon_*,\mu_*$ and $\varepsilon_*\mu_*=c^{-2}$. Unlike the external-field evaluation on a point envelope, the following identity concerns smooth total fields and smooth conserved sources satisfying the Maxwell equations on the region of interest. It also holds away from a singular source, but it cannot be evaluated at that source to infer a finite self-force. Define the field momentum density
+\begin{equation}
+\boxed{
+\bm g_{\rm EM}
+=
+\varepsilon_*\bm E\times\bm B
+=
+\frac{\bm S}{c^2},
+}
+\end{equation}
+where the second equality uses $\varepsilon_*\mu_*=c^{-2}$. Define the Maxwell stress tensor
+\begin{equation}
+\boxed{
+\begin{aligned}
+\sigma_{ij}={}&\varepsilon_*
+\bigl(E_iE_j-\tfrac12\delta_{ij}E^2\bigr)\\
+&+\mu_*^{-1}
+\bigl(B_iB_j-\tfrac12\delta_{ij}B^2\bigr).
+\end{aligned}
+}
+\end{equation}
+The Maxwell-compatible field equations imply
+\begin{equation}
+\boxed{
+\rho\bm E+\bm j\times\bm B
+=
+\nabla\cdot\bm\sigma
+-
+\partial_t\bm g_{\rm EM}.
+}
+\end{equation}
+For a fixed volume $V$, this identity reads
+\begin{equation}
+\frac{d}{dt}\int_V\mathbf g_{\rm EM}\,d^3x
++\int_V(\rho\mathbf E+\mathbf j\times\mathbf B)\,d^3x
+=\oint_{\partial V}\boldsymbol\sigma\cdot\mathbf n\,dS.
+\end{equation}
+It establishes the electromagnetic part of momentum exchange, including the surface stress flux. If the matter equations include non-EM forces, their corresponding momentum transfer must be included separately in a total balance. This is consistency of the chosen minimal coupling with the field equations, not a microscopic derivation of all matter response.
+
+The constant $\kappa_\theta$ term supplies no local bulk stress--energy in this sector: it is a total derivative. Consistently, $\mathbf E\times\mathbf H_{\rm full}=\mathbf E\times\mathbf B/\mu_*$ and $\mathbf D_{\rm full}\times\mathbf B=\varepsilon_*\mathbf E\times\mathbf B$. The formulas here therefore agree with the separated parity-even representative; varying coefficients and boundary or defect contributions remain excluded.
+
+\subsection{Energy transport}
+
+Under the same smooth-field and constant-coefficient conditions, the field equations imply
+\begin{equation}
+\boxed{
+\partial_tu_{\rm EM}
++
+\nabla\cdot\bm S
+=
+-\bm j\cdot\bm E,
+}
+\end{equation}
+where
+\begin{equation}
+\boxed{
+u_{\rm EM}
+=
+\frac{\varepsilon_*}{2}E^2
++
+\frac{1}{2\mu_*}B^2
+}
+\end{equation}
+and
+\begin{equation}
+\boxed{
+\bm S
+=
+\frac{1}{\mu_*}
+\bm E\times\bm B.
+}
+\end{equation}
+
+For a source-free plane wave,
+\begin{equation}
+|\bm B|
+=
+\frac{|\bm E|}{c},
+\end{equation}
+so that
+\begin{equation}
+|\bm S|=cu_{\rm EM}.
+\end{equation}
+
+\subsection{Radiation criterion}
+
+In the homogeneous linear regime, the transverse potential satisfies
+\begin{equation}
+\left(
+\partial_t^2-c^2\nabla^2
+\right)
+\bm A_T
+=
+\frac{1}{\varepsilon_*}\bm j_T.
+\end{equation}
+
+Free propagation lies on the shell
+\begin{equation}
+\boxed{
+\omega^2=c^2k^2.
+}
+\end{equation}
+
+Radiation requires transverse source spectral support on this shell. An eternally and uniformly moving rigid source has
+\begin{equation}
+\omega=\bm k\cdot\bm v.
+\end{equation}
+For $|\bm v|<c$, this does not intersect the free shell at nonzero $\bm k$. Thus ideal uniform subluminal rigid transport does not continuously radiate in the homogeneous boundary-free model. Acceleration, switching, boundaries, inhomogeneity, or internal source reconfiguration can generate on-shell support.
+
+\section{Electromagnetic Normalization and the Fine-Structure Constant}
+
+\subsection{One normalization remains after wave-speed matching}
+
+The compatibility condition
+\begin{equation}
+\varepsilon_*\mu_*=c^{-2}
+\end{equation}
+does not separately determine $\varepsilon_*$ and $\mu_*$. Define the effective impedance
+\begin{equation}
+\boxed{
+Z_*
+=
+\sqrt{\frac{\mu_*}{\varepsilon_*}}.
+}
+\end{equation}
+
+Then
+\begin{equation}
+\varepsilon_*
+=
+\frac{1}{Z_*c},
+\qquad
+\mu_*
+=
+\frac{Z_*}{c}.
+\end{equation}
+
+Thus source-free propagation fixes the product of the response coefficients, while one source--field normalization remains.
+
+\subsection{TEF interpretation of the dimensionless coupling}
+
+Use the same $e_*>0$ and $J_0$ as in Sec.~\ref{sec:normalizationmap}: $Q=n e_*$ and $\gamma_A=e_*/J_0$. These are the chosen charge and action normalizations for comparison with a possible microscopic completion, not independently derived constants. The natural dimensionless coupling associated with the Maxwell-compatible normalization is
+\begin{equation}
+\boxed{
+\alpha_*
+=
+\frac{e_*^2}
+{4\pi\varepsilon_*J_0c}
+=
+\frac{e_*^2Z_*}
+{4\pi J_0}.
+}
+\end{equation}
+
+This equation is not a new empirical formula; it is the standard dimensionless structure rewritten so that the remaining impedance is explicit. It suggests the following working TEF interpretation:
+
+\begin{quote}
+\emph{If a unit-label charged resonance is dynamically realized and the action and charge normalizations are matched to the electron, $\alpha_*$ is the candidate dimensionless coupling for its interaction with the rollout electromagnetic sector.}
+\end{quote}
+
+Before canonical normalization is fixed, ``the field is easy to deform'' and ``the unit charged excitation couples strongly'' are partly normalization-dependent descriptions. Once the compact connection, charge normalization, and action scale are fixed, the invariant combination specifies a candidate coupling. Without a realized and identified charged mode, it is not yet a prediction of the physical electron coupling. A label $n$ carries the corresponding normalization $n^2\alpha_*$, which does not establish that such a mode exists.
+
+\subsection{Relation to the earlier TEF fine-structure paper}
+
+Paper II proposed the conditional correspondence
+\begin{equation}
+\boxed{
+\alpha_{\rm TEF}
+=
+\frac{\delta_h}{2\pi^2},
+}
+\end{equation}
+where
+\begin{equation}
+\delta_h
+=
+\sqrt{1+q^2}-1
+\end{equation}
+is the inherited helix path-excess factor \cite{wu2026fine}.
+
+The present paper does not use this expression as input and does not confirm its numerical value. Instead, it identifies what a successful future microscopic derivation would have to determine: the canonical combination
+\begin{equation}
+\frac{e_*^2Z_*}{J_0}.
+\end{equation}
+
+For example, the convention change $(\mathbf A,\phi)\mapsto s(\mathbf A,\phi)$ with $s>0$ is accompanied by $e_*\mapsto e_*/s$, $\gamma_A\mapsto\gamma_A/s$, $\varepsilon_*\mapsto\varepsilon_*/s^2$, and $\mu_*\mapsto s^2\mu_*$. The compact angle, source action, wave speed, and $e_*^2Z_*/J_0$ are unchanged, while $Z_*\mapsto s^2Z_*$. Thus $Z_*$ and $e_*$ must be specified in a common normalization; neither alone is a convention-independent new prediction.
+
+The earlier Paper-II relation should therefore be regarded as a prior conditional geometric correspondence that can later be tested against an independently derived dynamical normalization.
+
+\section{The Charged Multi-Helix Resonance Candidate}
+\label{sec:chargedcandidate}
+
+The electron-like proposal requires an actual finite-energy, stable charged collective mode across multiple rollout helices. Its tentative $n=-1$ assignment uses an allowed representation (Sec.~\ref{sec:representations}); it does not establish a realized mode. A future construction might admit a separation
+\begin{equation}
+\begin{gathered}
+\Psi_e(X,\eta,t)\simeq\psi(X,t)u_e(\eta),\\
+K_{\rm int}u_e=\Omega_e^2M_{\rm int}u_e,\quad \Omega_e>0,
+\end{gathered}
+\end{equation}
+where $u_e$ is an internal multi-helix mode and $\psi$ its envelope. Bound, localized, and beam-like envelopes would then be different spatial states of the same internal candidate. The operators, mode, finite energy, stability, and nonzero internal frequency scale remain to be constructed.
+
+If its long-wave dispersion takes the form
+\begin{equation}
+\omega_e^2=\Omega_e^2+v_*^2k^2+O(k^4),
+\end{equation}
+matching $v_*=c$ is an additional target, not a consequence of the electromagnetic wave calculation. For an exactly relativistic candidate branch $\omega_e^2=\Omega_e^2+c^2k^2$, one has $v_g=c^2k/\sqrt{\Omega_e^2+c^2k^2}<c$ at finite $k$; extrapolation beyond a long-wave expansion would require independent justification. Explicit emergence models also show that common gauge and matter limiting speeds need not be automatic \cite{levinwen2006}.
+
+Only with an additional energy--frequency matching law would $E_{e,0}=J_0\Omega_e$ define a rest-energy scale and $m_{e,\rm eff}=E_{e,0}/c^2$ its derived effective rest parameter. Mass is not primitive here. After existence is established, electron identification still requires spin $1/2$, fermionic statistics, magnetic moment, relativistic behavior, and measured charge normalization. The electromagnetic phase must remain distinct from any proposed spinorial $4\pi$ orientation structure. The earlier topology program motivates a possible bridge but does not supply it. Neither the external-source Maxwell calculation nor the envelope Lorentz-force test resolves these existence and identification questions.
+
+\section{Discussion: What the Construction Establishes}
+
+The result has three logical levels. First, the adopted transverse-frame interpretation gives compact link kinematics, plaquette curvature, and integer representation labels. Second, a dynamical connection, stationary reference state, positive physical Hessian, smooth classical regime, and compatible continuum interpolation with the specified leading response are assumptions. Third, the discrete variational equations have Maxwell continuum representatives under those assumptions; the additional monopole coupling gives the external Lorentz force, consistent with smooth-source field energy and momentum exchange.
+
+The derivation of the quadratic action from an assumed compact Hamiltonian improves on simply postulating that action, but does not derive the Hamiltonian from helix microphysics. Its complete quadratic response includes finite-range loop contributions; compactness and stability alone do not force a nondegenerate Maxwell term. Likewise, exact cochain identities do not establish convergence of weighted operators or solutions. The detailed domain, interpolation, and defect restrictions are stated at their points of use.
+
+The Maxwell structure is largely generic once these effective ingredients are supplied. Its recovery is therefore a compatibility result, rather than independent evidence for TEF's microscopic ontology. The TEF-specific obligation is to construct the rollout carrier and dynamics that realize those ingredients and determine their parameters. Failure to sustain the smooth regime or justify the interpolation would block the proposed physical electromagnetic interpretation; failure to construct a stable charged mode would invalidate that matter candidate even if the conditional field calculation remained consistent. The principal open tasks are listed below.
+
+\section{Limitations and Next Steps}
+
+\subsection{Microscopic dynamics and persistence of the classical regime}
+
+Derive the compact Hamiltonian and its full quadratic response from multi-helix dynamics, and determine whether smooth fluctuations persist on the relevant scales. Nonlinear evolution, defect creation, and global holonomy require analysis beyond the local Hessian. A quantum or statistical Coulomb phase can be investigated only after specifying the completion, its state or ensemble, and phase diagnostics. Longer loops already contribute to the retained quadratic kernels; higher-amplitude and derivative corrections require separate microscopic estimates.
+
+\subsection{Controlled continuum correspondence}
+
+Construct a family of weighted rollout complexes with sampling and reconstruction maps, coefficient scaling, and geometric regularity. Establish consistency, stability, and convergence in stated norms with specified initial and boundary conditions. Effective three-dimensional isotropy, regular leading constitutive response, and wave-speed matching must be justified. These are stronger requirements than the effective interpolation adopted here.
+
+\subsection{Realized charged resonances and electron identification}
+
+Construct the internal collective mode and establish its finite energy, stability, gap, backreaction, and realized representation label. Then test its spin, statistics, magnetic moment, relativistic branch, and common causal speed. This separates existence from electron identification. Systematic quantization of the coupled connection and charged-resonance system, including QED comparison, is reserved for subsequent work.
+
+\subsection{Electromagnetic normalization}
+
+Determine the response ratio underlying $Z_*$ and jointly match the charge and action scales $e_*,J_0$. Only after charged-matter identification can the invariant $e_*^2Z_*/(4\pi J_0)$ be compared with the measured fine-structure constant and the earlier conditional Paper-II correspondence. Neither $J_0=\hbar$ nor the measured unit charge is established by the present classical equations.
+
+\section{Conclusion}
+
+This paper constructs an effective electrodynamic framework on an already-realized source-local rollout ensemble. The adopted transverse-frame comparison supplies compact connection variables, while an assumed local Hamiltonian supplies their quadratic dynamics. Its full response includes finite-range loop contributions and electric--magnetic mixing. Expansion about an admissible locally flat reference connection gives discrete variational equations and exact geometric identities without imposing trivial global holonomy.
+
+Under assumed smooth interpolation, compatible dual pairings, and homogeneous isotropic leading response, the continuum representative equations have Maxwell form. With the stated local boundary conditions, constant topological mixing leaves the bulk equations unchanged. Wave-speed matching gives the transverse electromagnetic dispersion. An assumed localized charged envelope with leading monopole coupling obeys the external Lorentz force, plus any non-EM mechanical force; smooth-source fields satisfy the corresponding energy and momentum balances.
+
+These results establish conditional classical compatibility. They do not prove microscopic continuum convergence, a quantum or statistical Coulomb phase, or the existence of a charged resonance. Compactness labels allowed representations; the proposed electron-like multi-helix mode still requires construction and identification. The next steps are to derive the response from rollout dynamics, sustain the smooth regime, justify continuum matching, and establish the charged modes and their normalization. This work is one component of the TEF research program: it specifies a conditional classical compatibility target and the microscopic derivations needed to substantiate it. Systematic quantization and QED comparison are deferred.
+
+\balance
+\begingroup
+\small
+\raggedright
+\begin{thebibliography}{99}
+
+\bibitem{wu2026helical}
+X. Wu,
+\emph{A Helical Spacetime Ansatz Linking the Planck Scale and Electroweak Mixing},
+Version 5.1, Zenodo (2026).
+doi:10.5281/zenodo.22101000.
+
+\bibitem{wu2026fine}
+X. Wu,
+\emph{From a Gravity-Calibrated Helix to a Conditional Fine-Structure Correspondence},
+Version 4.7, Zenodo (2026).
+doi:10.5281/zenodo.22117153.
+
+\bibitem{wu2026interface}
+X. Wu,
+\emph{From a Gravity-Calibrated Helix to a Matter--Spacetime Interface: Closure Obstruction and a Factorized Mass-Squared Ansatz},
+Version 3.2, Zenodo (2026).
+doi:10.5281/zenodo.22649267.
+
+\bibitem{wu2026minimal}
+X. Wu,
+\emph{The Emergent Frame: A Minimal Framework for Spacetime Rollout, Interaction, and Excitation},
+Version 2.5, Zenodo (2026).
+doi:10.5281/zenodo.22723329.
+
+\bibitem{wu2026geometry}
+X. Wu,
+\emph{Spacetime as Source-Local Rollout and the Conditional Emergence of Three-Dimensional Effective Geometry in The Emergent Frame},
+Version 3.12, Zenodo (2026).
+doi:10.5281/zenodo.22776137.
+
+\bibitem{desbrun2005dec}
+M. Desbrun, A. N. Hirani, M. Leok, and J. E. Marsden,
+\emph{Discrete Exterior Calculus},
+arXiv:math/0508341 (2005).
+
+\bibitem{kogut1979}
+J. B. Kogut,
+``An introduction to lattice gauge theory and spin systems,''
+\emph{Rev. Mod. Phys.} \textbf{51}, 659--713 (1979).
+doi:10.1103/RevModPhys.51.659.
+
+\bibitem{jackson1999}
+J. D. Jackson,
+\emph{Classical Electrodynamics},
+3rd ed., Wiley (1999).
+
+
+\bibitem{levinwen2005}
+M. Levin and X.-G. Wen,
+``Colloquium: Photons and electrons as emergent phenomena,''
+\emph{Rev. Mod. Phys.} \textbf{77}, 871--879 (2005).
+doi:10.1103/RevModPhys.77.871.
+
+\bibitem{levinwen2006}
+M. Levin and X.-G. Wen,
+``Quantum ether: Photons and electrons from a rotor model,''
+\emph{Phys. Rev. B} \textbf{73}, 035122 (2006).
+doi:10.1103/PhysRevB.73.035122.
+
+\bibitem{konopka2008}
+T. Konopka, F. Markopoulou, and S. Severini,
+``Quantum graphity: A model of emergent locality,''
+\emph{Phys. Rev. D} \textbf{77}, 104029 (2008).
+doi:10.1103/PhysRevD.77.104029.
+
+\bibitem{copinger2023}
+P. Copinger and P. Morales,
+``Emergent spacetime from a Berry-inspired dynamical gauge field coupled to electromagnetism,''
+\emph{Phys. Rev. D} \textbf{108}, 065013 (2023).
+doi:10.1103/PhysRevD.108.065013.
+
+\bibitem{arneth2026}
+B. Arneth,
+\emph{Relational Closure, Transport Consistency, and the Thermodynamic Emergence of Gauge and Gravitational Dynamics},
+Zenodo preprint (2026).
+doi:10.5281/zenodo.19105261.
+
+\end{thebibliography}
+\endgroup
+
+\end{document}
