@@ -100,3 +100,13 @@ references:
     version: "3.3"
     doi: "10.5281/zenodo.22849547"
     url: "https://doi.org/10.5281/zenodo.22849547"
+  - type: article
+    title: "An Electron-Like Charged-Textured Excitation with Spinorial Configuration Topology in The Emergent Frame"
+    authors:
+      - family-names: Wu
+        given-names: Xiaodan
+        orcid: "https://orcid.org/0009-0005-5892-0293"
+    year: 2026
+    version: "4.0"
+    doi: "10.5281/zenodo.22923781"
+    url: "https://doi.org/10.5281/zenodo.22923781"

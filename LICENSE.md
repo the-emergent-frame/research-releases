@@ -4,7 +4,7 @@ The following file-level licensing policy applies to this repository.
 
 ## CC BY 4.0
 
-The manuscripts, LaTeX source, READMEs, citation files, release manifests, and other research metadata are licensed under the Creative Commons Attribution 4.0 International License.
+The manuscripts, LaTeX source, READMEs, citation files, release manifests, supplementary research materials, and other research metadata are licensed under the Creative Commons Attribution 4.0 International License.
 
 Copyright (c) 2026 Xiaodan Wu.
 

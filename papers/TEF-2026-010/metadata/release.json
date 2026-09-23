@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "tef_id": "TEF-2026-010",
+  "title": "An Electron-Like Charged-Textured Excitation with Spinorial Configuration Topology in The Emergent Frame",
+  "authors": ["Xiaodan Wu"],
+  "orcid": "0009-0005-5892-0293",
+  "version": "v4.0",
+  "release_date": "2026-09-24",
+  "status": "Preprint; not peer reviewed",
+  "license": "CC-BY-4.0",
+  "zenodo_doi": "10.5281/zenodo.22923781",
+  "zenodo_concept_doi": "10.5281/zenodo.22923780",
+  "canonical_url": "https://doi.org/10.5281/zenodo.22923781",
+  "project_url": "https://theemergentframe.org",
+  "pdf": {
+    "path": "paper/manuscript.pdf",
+    "sha256": "9228bfab1e1a37ff27c1e769f8da65edbdce4e808ae8444e4ef712d34e1413db"
+  },
+  "source": {
+    "path": "paper/manuscript.tex",
+    "sha256": "fe51a74b9140516a6ef05364790f3421eefb6796073d881ddb15c393fe783a3b"
+  },
+  "source_figure": {
+    "path": "paper/TEF_U1_joint_profiles_v0.4.png",
+    "sha256": "8f1214c97f510954ee35d14eb33d28ccd2ebfe9966f9a179ad31506aa4396083"
+  },
+  "zenodo_supplementary_archive": {
+    "filename": "TEF_electron_sector_v4.0_supplementary_reproducibility.zip",
+    "sha256": "cdbdb71692fb112e570aca7f9aeead6860d5b2f3ec1c8e60fd8b5089e92b321f"
+  }
+}

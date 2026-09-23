@@ -21,6 +21,7 @@ PAPERS = (
     "TEF-2026-007",
     "TEF-2026-008",
     "TEF-2026-009",
+    "TEF-2026-010",
 )
 
 
@@ -36,8 +37,12 @@ def main() -> int:
     for paper_id in PAPERS:
         paper_root = ROOT / "papers" / paper_id
         manifest = json.loads((paper_root / "metadata" / "release.json").read_text())
-        for artifact_name in ("pdf", "source"):
-            artifact = manifest[artifact_name]
+        artifacts = {
+            name: value
+            for name, value in manifest.items()
+            if isinstance(value, dict) and {"path", "sha256"} <= value.keys()
+        }
+        for artifact_name, artifact in artifacts.items():
             artifact_path = paper_root / artifact["path"]
             actual_hash = sha256(artifact_path)
             expected_hash = artifact["sha256"]
@@ -49,7 +54,7 @@ def main() -> int:
             cwd=paper_root,
             check=True,
         )
-        print(f"{paper_id}: source/PDF hashes and numerical checks verified")
+        print(f"{paper_id}: artifact hashes and numerical checks verified")
 
     return 0
 

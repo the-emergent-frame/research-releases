@@ -1,0 +1,19 @@
+TEF U1 reference execution record for manuscript v3.1
+=======================================================
+
+Python: 3.13.5
+NumPy: 2.3.5
+SciPy: 1.17.0
+pandas: 2.2.3
+matplotlib: 3.10.8
+
+Command-equivalent: python TEF_U1_canonical_solver_v2.1.py
+
+Observed stdout:
+status=0
+adaptive_nodes=2116
+max_rms_residual=9.936912e-07
+Q=82.382378960500
+E=174.450852921338
+degree=0.999999998383
+gauss_relative_mismatch=1.547620e-10

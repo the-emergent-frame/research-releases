@@ -1,0 +1,10 @@
+texture_degree_nu,2pi_spatial_rotation_Z2_class,4pi_spatial_rotation_Z2_class,spinorial_FR_sector_available_if_nontrivial_rep_selected
+0,0,0,False
+1,1,0,True
+2,0,0,False
+3,1,0,True
+4,0,0,False
+5,1,0,True
+6,0,0,False
+7,1,0,True
+8,0,0,False

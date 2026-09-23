@@ -1,0 +1,26 @@
+{
+  "canonical_run": {
+    "status": 0,
+    "adaptive_nodes": 2116,
+    "max_rms_residual": 9.936912e-07,
+    "normalized_phase_charge": 82.3823789605,
+    "energy": 174.450852921338,
+    "texture_degree": 0.999999998383,
+    "gauss_relative_mismatch": 1.54762e-10
+  },
+  "primary_reference_channel": {
+    "radius": 40.0,
+    "joint_energy": 174.4508529213379,
+    "isolated_core_energy": 79.20334805513676,
+    "isolated_texture_energy": 103.13460038280144,
+    "reference_energy": 182.3379484379382,
+    "reference_gap": 7.887095516600283
+  },
+  "inverse_radius_extrapolation": {
+    "joint_energy": 176.248679,
+    "reference_energy": 184.219671,
+    "reference_gap": 7.970992
+  },
+  "origin_cutoff_energy_span": 0.000006,
+  "odd_degree_spinorial_rows": 4
+}
