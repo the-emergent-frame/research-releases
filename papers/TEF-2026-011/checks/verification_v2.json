@@ -1,0 +1,38 @@
+{
+  "version": "2",
+  "symbolic": "PASS: Cartesian differentiation verifies J, all six Hessians, determinant, norm, and coframe metric",
+  "numerical": {
+    "sample_count": 1200,
+    "trajectory_count": 25,
+    "max_errors": {
+      "round_trip": 4.864908001091198e-15,
+      "jacobian": 1.0111008845961103e-09,
+      "inverse_velocity": 2.6418948906090147e-15,
+      "acceleration": 1.0689875500881428e-09,
+      "straight_velocity": 9.358671366944764e-13,
+      "straight_acceleration": 1.1320153876443264e-09,
+      "averaging": 1.5987211554602254e-14
+    },
+    "tolerances": {
+      "round_trip": 1e-10,
+      "jacobian": 2e-08,
+      "inverse_velocity": 1e-11,
+      "acceleration": 2e-07,
+      "straight_velocity": 2e-08,
+      "straight_acceleration": 2e-07,
+      "averaging": 1e-10
+    },
+    "fold_and_noninjectivity": "PASS",
+    "image_rejection": "PASS"
+  },
+  "independent_phase": {
+    "symbolic_phase_and_coframe": "PASS",
+    "rank_and_distinct_kernels": "PASS",
+    "reference_invariance": "PASS",
+    "frenet_bridge": "PASS",
+    "trajectory_count": 60,
+    "max_acceleration_finite_difference_error": 1.26937066133902e-09,
+    "max_moving_frame_vs_cartesian_error": 5.551115123125783e-16
+  },
+  "graph": "PASS: compatible cycles, frustrated cycle, and local-reference invariance"
+}

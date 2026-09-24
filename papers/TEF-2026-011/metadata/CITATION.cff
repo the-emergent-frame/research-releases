@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite this version-specific Zenodo record."
+title: "Spatial Dimension, Internal Phase, and Kinematics of Helical Line Families"
+authors:
+  - family-names: Wu
+    given-names: Xiaodan
+    orcid: "https://orcid.org/0009-0005-5892-0293"
+    affiliation: "Independent Researcher"
+version: "2.1"
+date-released: 2026-09-25
+doi: "10.5281/zenodo.22945612"
+url: "https://doi.org/10.5281/zenodo.22945612"
+license: CC-BY-4.0

@@ -110,3 +110,13 @@ references:
     version: "4.0"
     doi: "10.5281/zenodo.22923781"
     url: "https://doi.org/10.5281/zenodo.22923781"
+  - type: article
+    title: "Spatial Dimension, Internal Phase, and Kinematics of Helical Line Families"
+    authors:
+      - family-names: Wu
+        given-names: Xiaodan
+        orcid: "https://orcid.org/0009-0005-5892-0293"
+    year: 2026
+    version: "2.1"
+    doi: "10.5281/zenodo.22945612"
+    url: "https://doi.org/10.5281/zenodo.22945612"

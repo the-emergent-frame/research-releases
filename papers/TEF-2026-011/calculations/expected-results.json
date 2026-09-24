@@ -1,0 +1,11 @@
+{
+  "report_version": "2",
+  "sample_count": 1200,
+  "trajectory_count": 25,
+  "independent_phase_trajectory_count": 60,
+  "required_pass_fields": 8,
+  "independent_phase_error_limits": {
+    "max_acceleration_finite_difference_error": 2e-7,
+    "max_moving_frame_vs_cartesian_error": 1e-10
+  }
+}

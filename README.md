@@ -18,6 +18,7 @@ The canonical human-readable records are maintained on the TEF website. Zenodo i
 | [TEF-2026-008](papers/TEF-2026-008/) | Spacetime as Source-Local Rollout and the Conditional Emergence of Three-Dimensional Effective Geometry in The Emergent Frame | v3.12 | Preprint; not peer reviewed | [10.5281/zenodo.22776137](https://doi.org/10.5281/zenodo.22776137) |
 | [TEF-2026-009](papers/TEF-2026-009/) | Rollout Connection Dynamics and a Maxwell–Lorentz-Compatible Low-Energy Electromagnetic Sector in The Emergent Frame | v3.3 | Preprint; not peer reviewed | [10.5281/zenodo.22849547](https://doi.org/10.5281/zenodo.22849547) |
 | [TEF-2026-010](papers/TEF-2026-010/) | An Electron-Like Charged-Textured Excitation with Spinorial Configuration Topology in The Emergent Frame | v4.0 | Preprint; not peer reviewed | [10.5281/zenodo.22923781](https://doi.org/10.5281/zenodo.22923781) |
+| [TEF-2026-011](papers/TEF-2026-011/) | Spatial Dimension, Internal Phase, and Kinematics of Helical Line Families | v2.1 | Preprint; not peer reviewed | [10.5281/zenodo.22945612](https://doi.org/10.5281/zenodo.22945612) |
 
 ## Verify
 
